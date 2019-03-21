@@ -1,7 +1,8 @@
 # project3
 
 
-FX Wood
 
+FX Wood
+Sang Choi
 Gavin Callander
 
