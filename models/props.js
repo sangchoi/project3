@@ -1,11 +1,20 @@
 // PROPS MODEL
+const mongoose = require('mongoose')
 
-// import mongoose
+const propsSchema = new mongoose.Schema({
+    body: {
+        type: String,
+        required: [true, 'Your props must have a message']
+    },
+    from: {
+        type: String, 
+        required: [true, 'Your props must have a sender']
+    },
+    to: {
+        type: String,
+        required: [true, 'Your props must have a recipient']
+    }
 
-// fields:
-// body
-// from
-// to
-// datestamp
+}, { timestamps: true }) // add createdAt and updatedAt
 
-// export mongoose model(   asdfasd )
+module.exports = mongoose.model('Props', propsSchema)
