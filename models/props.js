@@ -1,17 +1,18 @@
 // PROPS MODEL
 const mongoose = require('mongoose')
+const Schema = mongoose.Schema
 
-const propsSchema = new mongoose.Schema({
+const propsSchema = new Schema({
     body: {
         type: String,
         required: [true, 'Your props must have a message']
     },
     from: {
-        type: String, 
+        type: Schema.Types.ObjectId, 
         required: [true, 'Your props must have a sender']
     },
     to: {
-        type: String,
+        type: Schema.Types.ObjectId,
         required: [true, 'Your props must have a recipient']
     }
 
