@@ -5,4 +5,4 @@ const depSchema = new Schema({
     name: String
 });
 
-module.exports = mongoose.model('Band', depSchema);
+module.exports = mongoose.model('Dep', depSchema);
