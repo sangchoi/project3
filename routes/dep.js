@@ -11,34 +11,25 @@ router.route('/')
         console.log('GET /deps', req.originalUrl)
         Dep.find().populate('members').exec((err, Deps) => {
             if (!err) {
-                res.status(200).json({ type:'success', message:'returned some departments', data: Deps })
+                res.json({ type:'success', message:'returned some departments', data: Deps })
             } else {
-                res.status(500).json({ type: 'error', message: err.message})
-
+                // res.status(500).json({ type: 'error', message: err.message})
             }
-        })
-        .catch(err => {
-            console.log(err)
         })
     })
     // create one dep, return 201, no data
     .post((req, res) => {
         console.log('POST /deps', req.originalUrl)
-        Dep.create({
-            name: req.body.name,
-            members: req.body.members
-        }, (err, dep) => {
+        let dep = new Dep({ name: req.body.name, members: req.body.members })
+        dep.save((err, dep) => {
             console.log('response from db: ', { err, dep })
             // if there's no error:
             if (!err) {
                 res.status(201).json({type: 'success', message:'dep creation successful'})
             // if there is an error:
             } else {
-                res.status(500).json({ type: 'error', message:'dep creation failed' })
+                res.status(500).json({ type: 'error', message:'dep creation failed', err })
             }
-        })
-        .catch(err => {
-            console.log(err)
         })
     })
 
@@ -53,9 +44,6 @@ router.route('/:id')
             } else {
                 res.status(500).json({ type: 'error', message: 'department not found' })
             }
-        })
-        .catch(err => {
-            console.log(err)
         })
     })
     .put((req, res) => {
@@ -72,9 +60,6 @@ router.route('/:id')
                 res.status(500).json({ type: 'error', message: 'error during update', data: err })
             }
         })
-        .catch(err => {
-            console.log(err)
-        })
     })
     // get one dep and its users
 router.get('/:id/users', (req, res) => {
@@ -85,9 +70,6 @@ router.get('/:id/users', (req, res) => {
         } else {
             res.status(500).json({ type: 'error', message: 'request for dep and users resulted in an error', data: err})
         }
-    })
-    .catch(err => {
-        console.log(err)
     })
 })
 router.get('/:id/users/props', (req, res) => {
@@ -114,7 +96,6 @@ router.get('/:id/users/props', (req, res) => {
             res.status(500).json({ type: 'error', message: 'there was an error retrieving the users in this dept'})
         }
     })
-    .catch(err => {
-        console.log(err)
-    })
 })
+
+module.exports = router;
