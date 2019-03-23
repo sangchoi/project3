@@ -9,10 +9,12 @@ const propsSchema = new Schema({
     },
     from: {
         type: Schema.Types.ObjectId, 
+        ref: 'User',
         required: [true, 'Your props must have a sender']
     },
     to: {
         type: Schema.Types.ObjectId,
+        ref: 'User',
         required: [true, 'Your props must have a recipient']
     }
 
