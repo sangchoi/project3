@@ -18,4 +18,23 @@ router.route('/')
         })
     })
 
+// GET /:id - Get one props
+router.get('/:id', (req, res) => {
+    Props.findById(req.params.id, (err, props) => {
+        res.status(200).json(props);
+    });
+});
+
+// POST - Create one props
+router.post('/', (req, res) => {
+    let props = new Props({
+        body: req.body.body,
+        from: req.body.from,
+        to: req.body.to
+    });
+    props.save((err, newProp) => {
+        res.status(201).json(newProp);
+    });
+})
+
 module.exports = router;
