@@ -4,7 +4,7 @@ const router = express.Router();
 const Dep = require('../models/dep');
 
 router.route('/')
-    // GET all departments
+    // GET all departments, return 200, array of deps
     .get((req, res) => {
         console.log('GET /deps', req.originalUrl)
         Dep.find().populate('members').exec((err, Deps) => {
@@ -15,8 +15,11 @@ router.route('/')
 
             }
         })
+        .catch(err => {
+            console.log(err)
+        })
     })
-    // create one dep
+    // create one dep, return 201, no data
     .post((req, res) => {
         console.log('POST /deps', req.originalUrl)
         Dep.create({
@@ -32,11 +35,56 @@ router.route('/')
                 res.status(500).json({ type: 'error', message:'dep creation failed' })
             }
         })
+        .catch(err => {
+            console.log(err)
+        })
+    })
+
+router.route('/:id')
+    // get one dep, return 200, one dep
+    .get((req, res) => {
+        console.log('/deps/:id', req.body.originalUrl)
+        Dep.findById(req.params.id, (err, dep) => {
+            // if no error, send back the department without any population
+            if(!err) {
+                res.status(200).json({ type: 'success', message: 'department found', data: dep})
+            } else {
+                res.status(500).json({ type: 'error', message: 'department not found' })
+            }
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    })
+    .put((req, res) => {
+        // update one dep, return 203, no data
+        Dep.findByIdAndUpdate({
+            name: req.body.name,
+            members: req.body.name
+        }, {
+            new: true
+        }, (err, dep) => {
+            if (!err) {
+                res.status(203).json({ type: 'success', message: 'update successful' })
+            } else {
+                res.status(500).json({ type: 'error', message: 'error during update', data: err })
+            }
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    })
+    // get one dep and its users
+router.get('/:id/users', (req, res) => {
+    // get one dep with users: return 200, dep with users
+    Dep.findById(req.params.id).populate('members').exec((err, dep) => {
+        if (!err) {
+            res.status(200).json({ type: 'success', message: 'request for dep and users successful', data: dep })
+        } else {
+            res.status(500).json({ type: 'error', message: 'request for dep and users resulted in an error', data: err})
+        }
     })
     .catch(err => {
         console.log(err)
     })
-router.route('/:id')
-    .get((req, res) => {
-        
-    })
+})
