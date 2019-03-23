@@ -23,7 +23,7 @@ const signupLimiter = new RateLimit({
     message: JSON.stringify({type: 'error', message: 'Account creation maximum exceeded!' })
 })
 
-mongoose.connect('mongodb://localhost/jwt', {useNewUrlParser: true});
+mongoose.connect('mongodb://localhost/' + process.env.PROPS_DB, {useNewUrlParser: true});
 const db = mongoose.connection;
 db.on('open', () => {
     console.log(`Connected to Mongo on ${db.host}: ${db.port}`)
@@ -39,8 +39,9 @@ app.use('/auth', require('./routes/auth'))
 app.use('/locked', 
     expressJWT({ secret: process.env.JWT_SECRET })
     .unless({method: 'POST'}, require('./routes/locked')))
+app.use('/user', require('./routes/user'));
 
 app.listen(process.env.EXPRESS_PORT, () => {
-    console.log(`You're listening to the sweet sounds of ${process.env.EXPRESS_PORT} jwt-authorization in the morning...`)
+    console.log(`You're listening to the sweet sounds of ${process.env.EXPRESS_PORT} PROPS in the morning...`)
     console.log(`Oh, and the port is`, process.env.EXPRESS_PORT)
 })
