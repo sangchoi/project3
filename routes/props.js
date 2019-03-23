@@ -17,3 +17,5 @@ router.route('/')
             res.status(500).json({type: 'error', message: err.message})
         })
     })
+
+module.exports = router;

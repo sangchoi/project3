@@ -32,3 +32,5 @@ router.route('/:id/profile')
             console.log(err)
         })
     })
+
+module.exports = router;
