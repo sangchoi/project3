@@ -1,8 +1,10 @@
+// PROPS routes
 const express = require('express');
 const router = express.Router();
 const Props = require('../models/props');
 
 router.route('/')
+    // get all props
     .get((req, res) => {
         console.log('GET /props')
         Props.find()
