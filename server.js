@@ -41,9 +41,6 @@ app.use('/locked', expressJWT({ secret: process.env.JWT_SECRET }).unless({method
 
 // controller mounts
 app.use('/auth', require('./routes/auth'))
-app.use('/locked', 
-    expressJWT({ secret: process.env.JWT_SECRET })
-    .unless({method: 'POST'}, require('./routes/locked')))
 app.use('/user', require('./routes/user'));
 app.use('/api/deps', require('./routes/dep'))
 
