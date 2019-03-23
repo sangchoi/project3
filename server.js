@@ -41,9 +41,10 @@ app.use('/locked', expressJWT({ secret: process.env.JWT_SECRET }).unless({method
 
 // controller mounts
 app.use('/auth', require('./routes/auth'))
-app.use('/user', require('./routes/user'));
-app.use('/api/deps', require('./routes/dep'))
-
+app.use('/api/user', require('./routes/user'));
+app.use('/api/props', require('./routes/props'));
+app.use('/api/deps', require('./routes/dep'));
+app.use('/api/profile', require('./routes/profile'));
 
 app.listen(process.env.EXPRESS_PORT, () => {
     console.log(`You're listening to the sweet sounds of ${process.env.EXPRESS_PORT} PROPS in the morning...`)
