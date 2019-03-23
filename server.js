@@ -32,13 +32,16 @@ db.on('error', (err) => {
     console.log(`Database error:\n${err}`)
 })
 
+// rate limiters
 app.use('/auth/login', loginLimiter);
 app.use('/auth/signup', signupLimiter);
 
+// protects resources from non-token bearers
+app.use('/locked', expressJWT({ secret: process.env.JWT_SECRET }).unless({method: 'POST'}, require('./routes/locked')))
+
+// controller mounts
 app.use('/auth', require('./routes/auth'))
-app.use('/locked', 
-    expressJWT({ secret: process.env.JWT_SECRET })
-    .unless({method: 'POST'}, require('./routes/locked')))
+app.use('/api/deps', require('./routes/dep'))
 
 app.listen(process.env.EXPRESS_PORT, () => {
     console.log(`You're listening to the sweet sounds of ${process.env.EXPRESS_PORT} jwt-authorization in the morning...`)
