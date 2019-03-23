@@ -2,6 +2,8 @@
 const express = require('express');
 const router = express.Router();
 const Dep = require('../models/dep');
+const Props = require('../models/props')
+const mongoose = require('mongoose')
 
 router.route('/')
     // GET all departments, return 200, array of deps
@@ -82,6 +84,34 @@ router.get('/:id/users', (req, res) => {
             res.status(200).json({ type: 'success', message: 'request for dep and users successful', data: dep })
         } else {
             res.status(500).json({ type: 'error', message: 'request for dep and users resulted in an error', data: err})
+        }
+    })
+    .catch(err => {
+        console.log(err)
+    })
+})
+router.get('/:id/users/props', (req, res) => {
+    // get one dep, return 200, its users and their props
+    Dep.findById(req.params.id).populate({ path: 'members'}).exec((err, dep) => {
+        // get the dep and its users
+        if (!err) {
+            // get all of the props for each user
+            let userIds = dep.members.map(user => {
+                mongoose.Types.ObjectId(user._id)
+            })
+            Props.find({
+                from: { $in: userIds },
+                to: { $in: userIds }
+            }, (err, props) => {
+                if (!err) {
+                    res.status(200).json({ type: 'success', message: 'returning all users and their props in this dept', data: { dep, props }})
+                } else {
+                    console.log(err)
+                    res.status(500).json({ type: 'error', message: 'there was an error retrieving the props from this dept'})
+                }
+            })
+        } else {
+            res.status(500).json({ type: 'error', message: 'there was an error retrieving the users in this dept'})
         }
     })
     .catch(err => {
