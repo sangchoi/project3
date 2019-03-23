@@ -28,6 +28,7 @@ const userSchema = new Schema({
             message: props => `${props.value} is not a valid email`
         }
     },
+    department: {type: Schema.Types.ObjectId, ref: 'Dep'},
     profile: {type: Schema.Types.ObjectId, ref: 'Profile'}
 })
 
