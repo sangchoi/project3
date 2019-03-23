@@ -28,8 +28,8 @@ const userSchema = new Schema({
             message: props => `${props.value} is not a valid email`
         }
     },
-    department: {type: Schema.Types.ObjectId, ref: 'Dep'},
-    profile: {type: Schema.Types.ObjectId, ref: 'Profile'}
+    department: [{type: Schema.Types.ObjectId, ref: 'Dep'}],
+    profile: [{type: Schema.Types.ObjectId, ref: 'Profile'}]
 })
 
 // helper function to strip secrets from the user instance
