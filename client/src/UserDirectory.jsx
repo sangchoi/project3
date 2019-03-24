@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './UserDirectory.css';
+import axios from 'axios';
+import DirectoryEntry from './DirectoryEntry';
 
 class UserDirectory extends Component {
     constructor(props) {
@@ -7,15 +9,48 @@ class UserDirectory extends Component {
         this.state = {
             users: []
         }
+        this.goToProfileFromDirectory = this.goToProfileFromDirectory.bind(this)
+        this.givePropsFromDirectory = this.givePropsFromDirectory.bind(this)
+    }
+    // handle users clicking on a directory entry
+    goToProfileFromDirectory(e, user) {
+        console.log('clicked go to profile from directory, this was the user passed up:', user)
+
+    }
+    // handle users clicking on button to give props in directory
+    givePropsFromDirectory(e, user) {
+        console.log('clicked give props from directory, this was the user passed up:', user)
+
+    }
+
+    componentDidMount() {
+        // get all users from db
+        axios.get('/api/user')
+        .then(res => {
+            // upon reply, set the users in state
+            this.setState({ 
+                users: res.data
+            })
+        })
     }
     render() {
+        // map the users to a list of elements for insertion
+        let userList = this.state.users.map((user, i) => {
+            return (
+                <li  key={ i }  >
+                    <DirectoryEntry 
+                        user={ user } 
+                        goToProfile={ this.goToProfileFromDirectory } 
+                        giveProps={ this.givePropsFromDirectory }/>
+                </li>
+            )
+        })
         return (
             <div className="UserDirectory">
                 <h1>UserDirectory.jsx</h1>
                 <ul>
-                    <li>I am a user, I am on INSERT_TEAM_HERE and I am interested in scalable computing infrastructure</li>
-                    <li>I am also a user, and I am in accounting. My name is Kevin</li>
-                    <li>User 21642: <em>I am a robot... you will be assimilated... resistance is futile...</em></li>
+                    {/* insert user list into page */}
+                    { userList }
                 </ul>
             </div>
         )
