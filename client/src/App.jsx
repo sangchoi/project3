@@ -1,9 +1,22 @@
 import React, { Component } from 'react';
 import './App.css';
+
+// npm packages
+import axios from 'axios';
+
+// REACT COMPONENTS
+// AUTH
 import Signup from './Signup';
 import Login from './Login';
 import UserProfile from './UserProfile';
-import axios from 'axios';
+
+// HOMEPAGE
+
+// GIVE PROPS FORM
+
+// DIRECTORY
+import UserDirectory from './UserDirectory'
+
 
 class App extends Component {
   constructor(props) {
@@ -68,7 +81,7 @@ class App extends Component {
       })
     } else {
       // If found, send token to be verified
-      axios.post('/auth/me/from/token')
+      axios.post('/auth/me/from/token', {data: token})
       .then( res => {
         if (res.data.type === 'error') {
           console.log('there was an older token sir, and it didn\'t check out', res.data)
@@ -106,6 +119,7 @@ class App extends Component {
       <>    
         <div className="profile-box">  
           <UserProfile user={ user } logout={ this.logout }/>
+          <UserDirectory />
           <p><a onClick={ this.handleClick }>Test the protected route...</a></p>
           <p>{ this.state.lockedResult }</p>
       </div>
