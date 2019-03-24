@@ -8,9 +8,10 @@ import axios from 'axios';
 // AUTH
 import Signup from './Signup';
 import Login from './Login';
-import UserProfile from './UserProfile';
 
 // HOMEPAGE
+import UserProfile from './UserProfile';
+import MyProps from './MyProps';
 
 // GIVE PROPS FORM
 
@@ -121,6 +122,7 @@ class App extends Component {
       <>    
         <div className="profile-box">  
           <UserProfile user={ user } logout={ this.logout }/>
+          <MyProps user={ user } />
           <UserDirectory />
           <p><button onClick={ this.handleClick } >Test the protected route...</button></p>
           <p>{ this.state.lockedResult }</p>
