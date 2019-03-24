@@ -10,12 +10,12 @@ class SetUpPage extends Component {
             users: [],
             deps: [],
         }
-        this.onInputChange = this.onInputChange.bind(this);
-        this.formSubmit = this.formSubmit.bind(this);
+        this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    onInputChange(e) {
-        console.log('onInputChange()')
+    handleInputChange(e) {
+        console.log('handleInputChange()')
         e.preventDefault()
         console.log({ 
             targetValue: e.target.value,
@@ -24,7 +24,8 @@ class SetUpPage extends Component {
         })
     }
 
-    formSubmit(e) {
+    handleSubmit(e) {
+        e.preventDefault()
         console.log('formSubmit()')
         console.log('depformsubmit')
         console.log(e.target)
@@ -38,10 +39,10 @@ class SetUpPage extends Component {
                     <div className="Teams two-column">
                         <div className="LeftTeams col1">
                             <h3>Add Teams</h3>
-                            <form>
-                                <input onChange={ this.onInputChange } type="text" placeholder="Enter team name here..."/>
+                            <form name="addDepartmentForm" onSubmit={ this.handleSubmit }>
+                                <input name="name" onChange={ this.handleInputChange } type="text" placeholder="Enter team name here..."/>
                                 <br/>
-                                <input type="submit" value="Create Department"/>
+                                <input onSubmit={ this.handleSubmit } type="submit" value="Create Department"/>
                             </form>
                         </div>
                         <div className="RightTeams col2">
@@ -57,12 +58,12 @@ class SetUpPage extends Component {
                     <div className="People two-column">
                         <div className="LeftPeople col1">
                             <h3>Add People</h3>
-                            <form name="depForm">
-                                <input onChange={ this.onInputChange } type="text" placeholder="Enter name" name="name"/>
+                            <form name="addPeopleForm" onSubmit={ this.handleSubmit }>
+                                <input onChange={ this.handleInputChange } type="text" placeholder="Enter name" name="name"/>
                                 <br/>
-                                <input onChange={ this.onInputChange } type="text" placeholder="Enter employee ID here" name="employeeID"/>
+                                <input onChange={ this.handleInputChange } type="text" placeholder="Enter employee ID here" name="employeeID"/>
                                 <p>Helpful hint: Employee ID is the number that employees will use to sign in for the first time</p>
-                                <input onSubmit={ this.formSubmit } type="submit" value="Create Department"/>
+                                <input type="submit" value="Create Department"/>
                             </form>
                         </div>
                         <div className="RightPeople col2">
