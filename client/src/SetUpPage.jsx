@@ -40,6 +40,8 @@ class SetUpPage extends Component {
             case 'addUser':
                 this.addUser();
                 break;
+            default:
+                console.log('there was an error');
         }
     }
 

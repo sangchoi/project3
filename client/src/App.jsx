@@ -122,7 +122,7 @@ class App extends Component {
         <div className="profile-box">  
           <UserProfile user={ user } logout={ this.logout }/>
           <UserDirectory />
-          <p><a onClick={ this.handleClick }>Test the protected route...</a></p>
+          <p><button onClick={ this.handleClick } >Test the protected route...</button></p>
           <p>{ this.state.lockedResult }</p>
           <SetUpPage />
       </div>
