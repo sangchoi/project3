@@ -80,28 +80,31 @@ router.post('/login', (req, res) => {
 })
 // Route for token validation
 router.post('/me/from/token', ( req, res ) => {
-    console.log('POST /me/from/token', req.originalUrl, req.body)
+    console.log('POST /me/from/token', req.originalUrl)
     // make sure they sent us a token to check
     let token = req.body.token
     if ( !token ) {
         // If no token, return error
-        res.json( { type: 'error', message: 'You must pass a valid token!' } )
+        console.log('no token received')
+        res.json( { type: 'error', message: 'You must pass a token!' } )
     } else {
         // If token, verify it
         JWT.verify( token, process.env.JWT_SECRET, (err, user) => {
             if ( err ) {
+                console.log('there was an error validating a user\'s token.', err)
                 // If invalid, return an error
-                res.json( { type: 'error', message: 'Invalid token. Please log in again'} )
+                res.json( { type: 'error', message: 'Invalid token. Please log in again', data: err} )
             } else {
                 // If token is valid...
                 //   Look up the user in the db
                 User.findById(user._id, (err, user) => {
                     //   If user doesn't exist, return an error
                     if (err) {
+                        console.log(err)
                         res.json( { type: 'error', message: 'Database error during validation' } )
                     } else {
                         //   If user exists, send user and token back to React
-                        res.json({ type: 'success', message: 'Valid token', user: user.toObject})
+                        res.json({ type: 'success', message: 'Valid token', user: user.toObject() })
                     }
                 })
             }
@@ -109,6 +112,5 @@ router.post('/me/from/token', ( req, res ) => {
     }
 })
 
-// Route for logout
 
 module.exports = router;
