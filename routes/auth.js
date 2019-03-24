@@ -42,7 +42,7 @@ router.post('/signup', (req, res, next) => {
                     })
                     // return the token
                     console.log('here is the reply', JSON.stringify({newUser: newUser.toObject(), token}))
-                    res.status(201).json({type: 'success', message: `Account creation successful. Welcome ${newUser.name}!`, user: newUser.toObject(), token})
+                    res.status(201).json({type: 'success', message: `Account creation successful. Welcome ${newUser.name}!`, user: newUser.toObject(), token })
                 }
             })
         }
@@ -81,11 +81,13 @@ router.post('/login', (req, res) => {
 // Route for token validation
 router.post('/me/from/token', ( req, res ) => {
     console.log('POST /me/from/token', req.originalUrl)
+    console.log('submitted token',  req.body.token)
     // make sure they sent us a token to check
     let token = req.body.token
+    console.log('here is our token', token)
     if ( !token ) {
         // If no token, return error
-        console.log('no token received')
+        console.log('there was no token', token)
         res.json( { type: 'error', message: 'You must pass a token!' } )
     } else {
         // If token, verify it
@@ -100,11 +102,10 @@ router.post('/me/from/token', ( req, res ) => {
                 User.findById(user._id, (err, user) => {
                     //   If user doesn't exist, return an error
                     if (err) {
-                        console.log(err)
                         res.json( { type: 'error', message: 'Database error during validation' } )
                     } else {
                         //   If user exists, send user and token back to React
-                        res.json({ type: 'success', message: 'Valid token', user: user.toObject() })
+                        res.json({ type: 'success', message: 'Valid token', user: user.toObject(), token })
                     }
                 })
             }
@@ -112,5 +113,6 @@ router.post('/me/from/token', ( req, res ) => {
     }
 })
 
+// Route for logout
 
 module.exports = router;
