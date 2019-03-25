@@ -14,7 +14,7 @@ import PropsLogo from './PropsLogo';
 
 // HOMEPAGE
 import UserProfile from './UserProfile';
-import MyProps from './MyProps';
+import MyPropsShort from './MyPropsShort';
 import PropsFeed from './PropsFeed';
 
 // GIVE PROPS FORM
@@ -135,7 +135,7 @@ class App extends Component {
       <>  
         <div className="profile-box">  
           <UserProfile user={ user } logout={ this.logout }/>
-          <MyProps user={ user } />
+          <MyPropsShort user={ user } />
           <CommunityPage user={ user } />
           <PropsFeed />
           <p><button onClick={ this.handleClick } >Test the protected route...</button></p>
