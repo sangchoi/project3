@@ -7,9 +7,10 @@ import { BrowserRouter, Route, Link } from 'react-router-dom'
 
 
 // REACT COMPONENTS
-// AUTH
+// AUTH/SPLASH
 import Signup from './Signup';
 import Login from './Login';
+import PropsLogo from './PropsLogo';
 
 // HOMEPAGE
 import UserProfile from './UserProfile';
@@ -23,6 +24,15 @@ import CommunityPage from './CommunityPage';
 
 // SET-UP PAGE
 import SetUpPage from './SetUpPage';
+
+// MATERIAL-UI IMPORTS
+import { Typography, Grid, Paper} from '@material-ui/core';
+
+const styles = {
+  Paper: { padding: 20, marginTop: 10, marginBottom: 10}
+}
+
+
 
 class App extends Component {
   constructor(props) {
@@ -137,18 +147,25 @@ class App extends Component {
     } else {
       content = (
         <div className="authenticate">
-          <Signup liftToken={this.liftTokenToState} liftMessage={this.liftMessageToState} />
-          <Login liftToken={this.liftTokenToState} liftMessage={this.liftMessageToState} />
+        <Grid container spacing={12}>
+          <Grid item xs={12} md={12}>
+            <Login styles={styles} liftToken={this.liftTokenToState} liftMessage={this.liftMessageToState} />
+          </Grid>
+          <Grid item xs={6} md={6}>
+            <PropsLogo />
+          </Grid>
+          <Grid item xs={6} md={6}>
+            <Signup styles={styles} liftToken={this.liftTokenToState} liftMessage={this.liftMessageToState} />
+          </Grid>
+        </Grid>
+
         </div>
       )
     }
     return (
       <div className="App">
-      <BrowserRouter>
-        <header><h1>Welcome to my site!</h1></header>
-        <h3>{ this.state.message }</h3>
-        {content}
-      </BrowserRouter>
+        <h3>{ this.state.message }</h3> 
+        <Typography variant="h3">{content}</Typography>
       </div>
     )
   }
