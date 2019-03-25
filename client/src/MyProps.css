@@ -1,0 +1,11 @@
+.singleProps span {
+    margin-left: 1em;
+}
+
+.MyProps {
+    border: 1px solid black;
+    padding: 1em;
+    margin: 1em auto;
+    max-width: 70%;
+    text-align: left;
+}

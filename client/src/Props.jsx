@@ -2,21 +2,22 @@ import React from 'react';
 
 const Props = ({ singleProps, user }) => {
     console.log('user ID', user._id, 'singlePropsFrom', singleProps.from )
-    if ( user._id === singleProps.from ) {
+    console.log('in the props component', singleProps)
+    if ( user._id === singleProps.from._id ) {
         return (
             <div className="singleProps incoming">
-                <i>in_arrow</i>
+                <i>out_arrow_icon</i>
                 <span>Body: { singleProps.body }</span>
-                <span>From: { singleProps.from }</span>
+                <span>From: { singleProps.from.name }</span>
             </div>
         )
     }
-    if ( user._id === singleProps.to ) {
+    if ( user._id === singleProps.to._id ) {
         return (
             <div className="singleProps outgoing">
-                <i>out_arrow</i>
+                <i>in_arrow</i>
                 <span>Body: { singleProps.body }</span>
-                <span>To: { singleProps.to }</span>
+                <span>To: { singleProps.to.name }</span>
             </div>
         )
     }
