@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Props from './Props';
 import axios from 'axios';
-import './MyProps.css'
+import './MyPropsShort.css'
 
-class MyProps extends Component {
+class MyPropsShort extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -36,4 +36,4 @@ class MyProps extends Component {
     }
 }
 
-export default MyProps;
+export default MyPropsShort;
