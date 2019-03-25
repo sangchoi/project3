@@ -20,7 +20,7 @@ import PropsFeed from './PropsFeed';
 // GIVE PROPS FORM
 
 // HOME PAGE
-// import HomePage from './HomePage';
+import HomePage from './HomePage';
 
 // PROFILE PAGE
 // import ProfilePage from './ProfilePage';
@@ -142,10 +142,10 @@ class App extends Component {
     if (user) {
       content = ( 
           <BrowserRouter>
-              {/* <Route 
+               <Route 
                 path="/home"
                 render={ () => <HomePage user={ user } logout={ this.logout }/> }/>
-
+              {/*
               <Route 
                 path="/profile"
                 render={ () => <ProfilePage user={ user } /> } />
