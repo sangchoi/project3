@@ -19,8 +19,17 @@ import PropsFeed from './PropsFeed';
 
 // GIVE PROPS FORM
 
-// DIRECTORY
+// HOME PAGE
+// import HomePage from './HomePage';
+
+// PROFILE PAGE
+// import ProfilePage from './ProfilePage';
+
+// COMMUNITY
 import CommunityPage from './CommunityPage';
+
+// TOWN SQUARE
+// import TownSquare from './TownSquare';
 
 // SET-UP PAGE
 import SetUpPage from './SetUpPage';
@@ -131,18 +140,33 @@ class App extends Component {
     let user = this.state.user
     let content
     if (user) {
-      content = (
-      <>  
-        <div className="profile-box">  
-          <UserProfile user={ user } logout={ this.logout }/>
-          <MyProps user={ user } />
-          <CommunityPage user={ user } />
-          <PropsFeed />
-          <p><button onClick={ this.handleClick } >Test the protected route...</button></p>
-          <p>{ this.state.lockedResult }</p>
-          <SetUpPage />
-      </div>
-      </>
+
+      content = ( 
+          <BrowserRouter>
+              {/* <Route 
+                path="/home"
+                render={ () => <HomePage user={ user } logout={ this.logout }/> }/>
+
+              <Route 
+                path="/profile"
+                render={ () => <ProfilePage user={ user } /> } />
+
+              <Route 
+                path="/community" 
+                render={ () => <CommunityPage user={ user } /> } />
+
+              <Route 
+                path="/square" 
+                component={ TownSquare } />  */}
+
+              <Route 
+                path="/setup" 
+                component={ SetUpPage } />
+
+              <p><button onClick={ this.handleClick } >Test the protected route...</button></p>
+              <p>{ this.state.lockedResult }</p>
+          </BrowserRouter>
+
       )
     } else {
       content = (
