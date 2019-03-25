@@ -2,27 +2,40 @@ import React, { Component } from 'react';
 import './UserDirectory.css';
 import axios from 'axios';
 import DirectoryEntry from './DirectoryEntry';
+import GiveProps from './GiveProps';
 
 class UserDirectory extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            users: []
+            users: [],
+            givingProps: false,
+            propsRecipient: '',
         }
         this.goToProfileFromDirectory = this.goToProfileFromDirectory.bind(this)
-        this.givePropsFromDirectory = this.givePropsFromDirectory.bind(this)
+        this.handleGivePropsBtn = this.handleGivePropsBtn.bind(this)
+        this.doneGivingProps = this.doneGivingProps.bind(this)
     }
     // handle users clicking on a directory entry
     goToProfileFromDirectory(e, user) {
         console.log('clicked go to profile from directory, this was the user passed up:', user)
-
+        // use browser router to go to profile page
     }
     // handle users clicking on button to give props in directory
-    givePropsFromDirectory(e, user) {
-        console.log('clicked give props from directory, this was the user passed up:', user)
-
+    handleGivePropsBtn(e, recipient) {
+        console.log('clicked give props from directory, this was the user passed up:', recipient)
+        // show props form
+        this.setState({
+            givingProps: true,
+            propsRecipient: recipient,
+        })
     }
-
+    doneGivingProps() {
+        this.setState({
+            givingProps: false,
+            recipient: '',
+        })
+    }
     componentDidMount() {
         // get all users from db
         axios.get('/api/user')
@@ -33,6 +46,7 @@ class UserDirectory extends Component {
             })
         })
     }
+
     render() {
         // map the users to a list of elements for insertion
         let userList = this.state.users.map((user, i) => {
@@ -41,10 +55,11 @@ class UserDirectory extends Component {
                     <DirectoryEntry 
                         user={ user } 
                         goToProfile={ this.goToProfileFromDirectory } 
-                        giveProps={ this.givePropsFromDirectory }/>
+                        giveProps={ this.handleGivePropsBtn }/>
                 </li>
             )
         })
+
         return (
             <div className="UserDirectory">
                 <h1>UserDirectory.jsx</h1>
@@ -52,6 +67,7 @@ class UserDirectory extends Component {
                     {/* insert user list into page */}
                     { userList }
                 </ul>
+                <GiveProps show={ this.state.givingProps } done={ this.doneGivingProps } updateFormValue={ this.updateForm } sender={ this.props.user } recipient={ this.state.propsRecipient}/>
             </div>
         )
     }
