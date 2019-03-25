@@ -150,11 +150,11 @@ class App extends Component {
               <Route 
                 path="/profile"
                 render={ () => <ProfilePage user={ user } /> } />
-
+              */}
               <Route 
                 path="/community" 
                 render={ () => <CommunityPage user={ user } /> } />
-
+              {/*
               <Route 
                 path="/square" 
                 component={ TownSquare } />  */}
