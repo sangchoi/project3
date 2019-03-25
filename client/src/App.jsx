@@ -149,15 +149,14 @@ class App extends Component {
         <div className="authenticate">
         <Grid container spacing={12}>
           <Grid item xs={12} md={12}>
-          <Login styles={styles} liftToken={this.liftTokenToState} liftMessage={this.liftMessageToState} />
+            <Login styles={styles} liftToken={this.liftTokenToState} liftMessage={this.liftMessageToState} />
           </Grid>
           <Grid item xs={6} md={6}>
-          <PropsLogo />
+            <PropsLogo />
           </Grid>
           <Grid item xs={6} md={6}>
-          <Signup styles={styles} liftToken={this.liftTokenToState} liftMessage={this.liftMessageToState} />
+            <Signup styles={styles} liftToken={this.liftTokenToState} liftMessage={this.liftMessageToState} />
           </Grid>
-          
         </Grid>
 
         </div>
@@ -165,15 +164,8 @@ class App extends Component {
     }
     return (
       <div className="App">
-        {/* <BrowserRouter>
-        <Grid container spacing={12}>
-          <Grid item xs={12} md={6}>
-        <header className="pageOneHeader"><Typography variant="h1"><h1>Props</h1></Typography></header></Grid>
-        <Grid item xs={12} md={6}><h3>{ this.state.message }</h3> */}
+        <h3>{ this.state.message }</h3> 
         <Typography variant="h3">{content}</Typography>
-        {/* </Grid>
-        </Grid>
-        </BrowserRouter> */}
       </div>
     )
   }
