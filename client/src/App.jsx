@@ -132,7 +132,7 @@ class App extends Component {
     let content
     if (user) {
       content = (
-      <>    
+      <>  
         <div className="profile-box">  
           <UserProfile user={ user } logout={ this.logout }/>
           <MyProps user={ user } />
