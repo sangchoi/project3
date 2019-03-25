@@ -83,8 +83,8 @@ export default class Login extends Component {
             <Paper style={styles.Paper} elevation={5}>
                 <Typography variant="h6">Log in to your account</Typography>
                 <form onSubmit={ this.handleSubmit } >
-                <i class="material-icons" style={styles.Icon}>face</i><TextField style={{padding: 20}} label="Email"><input onChange={this.handleEmailChange} value={this.state.email}type="email" name="email" placeholder="Enter your email..."/></TextField>
-                    <TextField label="Password" style={{padding: 20}}><input onChange={this.handlePasswordChange} value={this.state.password} type="password" name="password" placeholder="Enter your password..."/></TextField>
+                <i class="material-icons" >face</i><TextField style={{padding: 20}} label="Email"><input onChange={this.handleEmailChange} value={this.state.email}type="email" name="email" placeholder="Enter your email..."/></TextField>
+                    <TextField label="Password"><input onChange={this.handlePasswordChange} value={this.state.password} type="password" name="password" placeholder="Enter your password..."/></TextField>
                     <input type="submit" value="Log In!"/>
                 </form>
                 </Paper>
