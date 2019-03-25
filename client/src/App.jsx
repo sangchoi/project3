@@ -3,7 +3,8 @@ import './App.css';
 
 // npm packages
 import axios from 'axios';
-import BrowserRouter from 'react-router-dom';
+import { BrowserRouter, Route, Link } from 'react-router-dom'
+
 
 // REACT COMPONENTS
 // AUTH
@@ -143,9 +144,11 @@ class App extends Component {
     }
     return (
       <div className="App">
+      <BrowserRouter>
         <header><h1>Welcome to my site!</h1></header>
         <h3>{ this.state.message }</h3>
         {content}
+      </BrowserRouter>
       </div>
     )
   }
