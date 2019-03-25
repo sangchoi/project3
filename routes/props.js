@@ -27,13 +27,21 @@ router.get('/:id', (req, res) => {
 
 // POST - Create one props
 router.post('/', (req, res) => {
+    // create one props, return 201 and no data
+    console.log('POST /api/props', req.originalUrl)
     let props = new Props({
         body: req.body.body,
         from: req.body.from,
         to: req.body.to
     });
     props.save((err, newProp) => {
-        res.status(201).json(newProp);
+        if (!err) {
+            console.log('props created, here is the db response:', newProp)
+            res.status(201).json({type: 'success', message: 'Props created', data: newProp});
+        } else {
+            console.log(err)
+            res.status(200).json({ type: 'error', message: 'there was an error creating your prop', data: err})
+        }
     });
 })
 

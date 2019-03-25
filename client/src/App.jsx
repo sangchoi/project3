@@ -3,15 +3,19 @@ import './App.css';
 
 // npm packages
 import axios from 'axios';
+import { BrowserRouter, Route, Link } from 'react-router-dom'
+
 
 // REACT COMPONENTS
-// AUTH
+// AUTH/SPLASH
 import Signup from './Signup';
 import Login from './Login';
+import PropsLogo from './PropsLogo';
 
 // HOMEPAGE
 import UserProfile from './UserProfile';
 import MyProps from './MyProps';
+import PropsFeed from './PropsFeed';
 
 // GIVE PROPS FORM
 
@@ -37,7 +41,7 @@ class App extends Component {
       token: '',
       user: null,
       message: '',
-      lockedResult: ''
+      lockedResult: '',
     }
     this.liftTokenToState = this.liftTokenToState.bind(this)
     this.liftMessageToState = this.liftMessageToState.bind(this)
@@ -132,7 +136,8 @@ class App extends Component {
         <div className="profile-box">  
           <UserProfile user={ user } logout={ this.logout }/>
           <MyProps user={ user } />
-          <UserDirectory />
+          <UserDirectory user={ user } />
+          <PropsFeed />
           <p><button onClick={ this.handleClick } >Test the protected route...</button></p>
           <p>{ this.state.lockedResult }</p>
           <SetUpPage />
@@ -142,21 +147,33 @@ class App extends Component {
     } else {
       content = (
         <div className="authenticate">
-          <Signup styles={styles} liftToken={this.liftTokenToState} liftMessage={this.liftMessageToState} />
+        <Grid container spacing={12}>
+          <Grid item xs={12} md={12}>
           <Login styles={styles} liftToken={this.liftTokenToState} liftMessage={this.liftMessageToState} />
+          </Grid>
+          <Grid item xs={6} md={6}>
+          <PropsLogo />
+          </Grid>
+          <Grid item xs={6} md={6}>
+          <Signup styles={styles} liftToken={this.liftTokenToState} liftMessage={this.liftMessageToState} />
+          </Grid>
+          
+        </Grid>
+
         </div>
       )
     }
     return (
       <div className="App">
+        {/* <BrowserRouter>
         <Grid container spacing={12}>
           <Grid item xs={12} md={6}>
         <header className="pageOneHeader"><Typography variant="h1"><h1>Props</h1></Typography></header></Grid>
-        <Grid item xs={12} md={6}><h3>{ this.state.message }</h3>
+        <Grid item xs={12} md={6}><h3>{ this.state.message }</h3> */}
         <Typography variant="h3">{content}</Typography>
+        {/* </Grid>
         </Grid>
-        </Grid>
-        
+        </BrowserRouter> */}
       </div>
     )
   }
