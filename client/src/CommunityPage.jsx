@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './UserDirectory.css';
+import './CommunityPage.css';
 import axios from 'axios';
 import DirectoryEntry from './DirectoryEntry';
 import GiveProps from './GiveProps';
