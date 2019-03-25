@@ -2,12 +2,16 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 // MATERIAL-UI
-import {AppBar, Paper} from '@material-ui/core'
+import {AppBar, Paper, Typography, TextField, Grid} from '@material-ui/core'
+
+// MATERIAL-UI ICONS
+// import AccountCircle from '@material-ui/icons/AccountCircle';
 
 
 // MATERIAL-UI VARIABLES
 const styles = {
-    Paper: { padding: 20, marginTop: 10, marginBottom: 10}
+    Paper: { padding: 20, marginBottom: 10 },
+    Icon: {paddingLeft: 10, paddingRight: 10},
   }
   
 
@@ -75,14 +79,16 @@ export default class Login extends Component {
     render() {
         return(
             <div className="login">
-            <Paper style={styles.Paper}>
-                <h3>Log in to your account</h3>
+            <Grid>
+            <Paper style={styles.Paper} elevation={5}>
+                <Typography variant="h6">Log in to your account</Typography>
                 <form onSubmit={ this.handleSubmit } >
-                    <input onChange={this.handleEmailChange} value={this.state.email}type="email" name="email" placeholder="Enter your email..."/>
-                    <input onChange={this.handlePasswordChange} value={this.state.password} type="password" name="password" placeholder="Enter your password..."/>
+                <i class="material-icons" style={styles.Icon}>face</i><TextField style={{padding: 20}} label="Email"><input onChange={this.handleEmailChange} value={this.state.email}type="email" name="email" placeholder="Enter your email..."/></TextField>
+                    <TextField label="Password" style={{padding: 20}}><input onChange={this.handlePasswordChange} value={this.state.password} type="password" name="password" placeholder="Enter your password..."/></TextField>
                     <input type="submit" value="Log In!"/>
                 </form>
                 </Paper>
+                </Grid>
             </div>
         )
     }

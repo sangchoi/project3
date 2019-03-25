@@ -148,13 +148,13 @@ class App extends Component {
       content = (
         <div className="authenticate">
         <Grid container spacing={12}>
-          <Grid item xs={12} md={12}>
+          <Grid item xs={12} md={12} alignItems="flex-end">
             <Login styles={styles} liftToken={this.liftTokenToState} liftMessage={this.liftMessageToState} />
           </Grid>
-          <Grid item xs={6} md={6}>
+          <Grid item xs={12} md={6}>
             <PropsLogo />
           </Grid>
-          <Grid item xs={6} md={6}>
+          <Grid item xs={12} md={6}>
             <Signup styles={styles} liftToken={this.liftTokenToState} liftMessage={this.liftMessageToState} />
           </Grid>
         </Grid>
