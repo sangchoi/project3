@@ -140,6 +140,7 @@ class App extends Component {
     let user = this.state.user
     let content
     if (user) {
+
       content = ( 
           <BrowserRouter>
               {/* <Route 
@@ -165,6 +166,7 @@ class App extends Component {
               <p><button onClick={ this.handleClick } >Test the protected route...</button></p>
               <p>{ this.state.lockedResult }</p>
           </BrowserRouter>
+
       )
     } else {
       content = (
