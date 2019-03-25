@@ -21,6 +21,15 @@ import UserDirectory from './UserDirectory';
 // SET-UP PAGE
 import SetUpPage from './SetUpPage';
 
+// MATERIAL-UI IMPORTS
+import { Typography, Grid, Paper} from '@material-ui/core';
+
+const styles = {
+  Paper: { padding: 20, marginTop: 10, marginBottom: 10}
+}
+
+
+
 class App extends Component {
   constructor(props) {
     super(props)
@@ -133,16 +142,21 @@ class App extends Component {
     } else {
       content = (
         <div className="authenticate">
-          <Signup liftToken={this.liftTokenToState} liftMessage={this.liftMessageToState} />
-          <Login liftToken={this.liftTokenToState} liftMessage={this.liftMessageToState} />
+          <Signup styles={styles} liftToken={this.liftTokenToState} liftMessage={this.liftMessageToState} />
+          <Login styles={styles} liftToken={this.liftTokenToState} liftMessage={this.liftMessageToState} />
         </div>
       )
     }
     return (
       <div className="App">
-        <header><h1>Welcome to my site!</h1></header>
-        <h3>{ this.state.message }</h3>
-        {content}
+        <Grid container spacing={12}>
+          <Grid item xs={12} md={6}>
+        <header className="pageOneHeader"><Typography variant="h1"><h1>Props</h1></Typography></header></Grid>
+        <Grid item xs={12} md={6}><h3>{ this.state.message }</h3>
+        <Typography variant="h3">{content}</Typography>
+        </Grid>
+        </Grid>
+        
       </div>
     )
   }
