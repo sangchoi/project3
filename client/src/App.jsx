@@ -3,6 +3,7 @@ import './App.css';
 
 // npm packages
 import axios from 'axios';
+import BrowserRouter from 'react-router-dom';
 
 // REACT COMPONENTS
 // AUTH
@@ -12,6 +13,7 @@ import Login from './Login';
 // HOMEPAGE
 import UserProfile from './UserProfile';
 import MyProps from './MyProps';
+import PropsFeed from './PropsFeed';
 
 // GIVE PROPS FORM
 
@@ -28,7 +30,7 @@ class App extends Component {
       token: '',
       user: null,
       message: '',
-      lockedResult: ''
+      lockedResult: '',
     }
     this.liftTokenToState = this.liftTokenToState.bind(this)
     this.liftMessageToState = this.liftMessageToState.bind(this)
@@ -124,6 +126,7 @@ class App extends Component {
           <UserProfile user={ user } logout={ this.logout }/>
           <MyProps user={ user } />
           <UserDirectory user={ user } />
+          <PropsFeed />
           <p><button onClick={ this.handleClick } >Test the protected route...</button></p>
           <p>{ this.state.lockedResult }</p>
           <SetUpPage />
