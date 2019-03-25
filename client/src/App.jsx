@@ -19,7 +19,7 @@ import PropsFeed from './PropsFeed';
 // GIVE PROPS FORM
 
 // DIRECTORY
-import UserDirectory from './UserDirectory';
+import CommunityPage from './CommunityPage';
 
 // SET-UP PAGE
 import SetUpPage from './SetUpPage';
@@ -126,7 +126,7 @@ class App extends Component {
         <div className="profile-box">  
           <UserProfile user={ user } logout={ this.logout }/>
           <MyProps user={ user } />
-          <UserDirectory user={ user } />
+          <CommunityPage user={ user } />
           <PropsFeed />
           <p><button onClick={ this.handleClick } >Test the protected route...</button></p>
           <p>{ this.state.lockedResult }</p>
