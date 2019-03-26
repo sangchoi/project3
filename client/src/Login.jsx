@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 // MATERIAL-UI
-import {AppBar, Paper, Typography, TextField, Grid} from '@material-ui/core'
+import {AppBar, Paper, Typography, TextField, Grid, Button} from '@material-ui/core'
 
 // MATERIAL-UI ICONS
 // import AccountCircle from '@material-ui/icons/AccountCircle';
@@ -11,7 +11,7 @@ import {AppBar, Paper, Typography, TextField, Grid} from '@material-ui/core'
 // MATERIAL-UI VARIABLES
 const styles = {
     Paper: { padding: 20, marginBottom: 10 },
-    Icon: {paddingLeft: 10, paddingRight: 10},
+    Icon: {paddingLeft: 10, paddingRight: 10, color: "rgb(4, 80, 41)"}
   }
   
 
@@ -83,9 +83,11 @@ export default class Login extends Component {
             <Paper style={styles.Paper} elevation={5}>
                 <Typography variant="h6">Log in to your account</Typography>
                 <form onSubmit={ this.handleSubmit } >
-                <i class="material-icons" >face</i><TextField style={{padding: 20}} label="Email"><input onChange={this.handleEmailChange} value={this.state.email}type="email" name="email" placeholder="Enter your email..."/></TextField>
-                    <TextField label="Password"><input onChange={this.handlePasswordChange} value={this.state.password} type="password" name="password" placeholder="Enter your password..."/></TextField>
-                    <input type="submit" value="Log In!"/>
+                <i class="material-icons" style={styles.Icon}>email</i>
+                <TextField label="Email"><input onChange={this.handleEmailChange} value={this.state.email}type="email" name="email" placeholder="Enter your email..."/></TextField>
+                <i class="material-icons" style={styles.Icon}>lock</i>
+                <TextField label="Password"><input onChange={this.handlePasswordChange} value={this.state.password} type="password" name="password" placeholder="Enter your password..."/></TextField>
+                <Button variant="outlined"><input type="submit" value="Log In!"/></Button>
                 </form>
                 </Paper>
                 </Grid>
