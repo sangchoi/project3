@@ -1,3 +1,45 @@
+@font-face {
+  font-family: 'CircularStd-Black';
+  src: local('CircularStd-Black'), url(./fonts/CircularStd-Black.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'CircularStd-BlackItalic';
+  src: local('CircularStd-BlackItalic'), url(./fonts/CircularStd-BlackItalic.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'CircularStd-Bold';
+  src: local('CircularStd-Bold'), url(./fonts/CircularStd-Bold.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'CircularStd-BoldItalic';
+  src: local('CircularStd-BoldItalic'), url(./fonts/CircularStd-BoldItalic.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'CircularStd-Book';
+  src: local('CircularStd-Book'), url(./fonts/CircularStd-Book.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'CircularStd-BookItalic';
+  src: local('CircularStd-BookItalic'), url(./fonts/CircularStd-BookItalic.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'CircularStd-Medium';
+  src: local('CircularStd-Medium'), url(./fonts/CircularStd-Medium.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'CircularStd-MediumItalic';
+  src: local('CircularStd-MediumItalic'), url(./fonts/CircularStd-MediumItalic.otf) format('opentype');
+}
+
+
+
 .App {
   font-family: 'Fredoka One', cursive;
   text-align: center;
@@ -22,7 +64,7 @@
   grid-area: propsLogoDiv;
   border: 1px red solid;
   font-size: 5em;
-  font-family: 'Fredoka One', cursive;
+  font-family: 'CircularStd-Black';
   color: rgb(4, 80, 41);
 }
 
@@ -58,7 +100,11 @@
   margin: 120px 0 0 0;
 }
 
-
+.GeneralAssemblyLogo {
+  width: 50%;
+  height: 30%;
+  border: 1px red solid;
+}
 
 /* Signup.jsx ------------------------------------------------------------------------- */
 
@@ -77,6 +123,7 @@
   border-bottom: 1px solid rgb(252, 1, 1);
   width: 200px;
   height: 50px;
+  font-size: 1em;
 }
 
 
