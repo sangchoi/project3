@@ -1,12 +1,59 @@
 .App {
   text-align: center;
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  grid-template-columns: .5fr .5fr;
+  grid-template-rows: .1fr .9fr;
+  grid-template-areas: "loginDiv loginDiv"
+                      "propsLogoDiv signupDiv";
 }
 
-.pageOneHeader {
+.LoginDiv {
+  grid-area: loginDiv;
+  border: 1px red solid;
+
+}
+
+.PropsLogoDiv {
+  grid-area: propsLogoDiv;
+  border: 1px red solid;
+  margin: 90px;
+  font-size: 5em;
   font-family: 'Fredoka One', cursive;
- 
   color: rgb(4, 80, 41);
 }
+
+.SignupDiv {
+  grid-area: signupDiv;
+  border: 1px red solid;
+}
+
+
+
+
+
+
+.pageOneHeader {
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* This is for the nav for dev purposes only */
@@ -23,3 +70,4 @@
   padding: .5em 1em;
   font-size: 18px;
 }
+

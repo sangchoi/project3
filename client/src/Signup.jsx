@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import {Paper} from '@material-ui/core';
 
-const styles = {
-    Paper: { padding: 20, marginTop: 10, marginBottom: 10}
-  }
-  
+
 
 export default class Signup extends Component {
     constructor(props) {
@@ -86,15 +82,15 @@ export default class Signup extends Component {
         console.log('rendering signup')
         return (
             <div className="signup">
-            <Paper style={styles.Paper}>
-                <h3>Create a new account: </h3>
+            
+                <h3>Hello! Create an account! </h3>
                 <form onSubmit={this.handleSubmit} >
                     <input onChange={this.handleNameChange} value={this.state.name} type="text" name="name" placeholder="Enter your full name"/><br />
                     <input onChange={this.handleEmailChange} value={this.state.email} type="email" name="email" placeholder="Enter your email address"/><br />
                     <input onChange={this.handlePasswordChange} value={this.state.password} type="password" name="password" placeholder="Choose a password..."/><br />
                     <input type="submit" value="Sign Up!"/>
                 </form>
-                </Paper>
+                
             </div>
         )
     }
