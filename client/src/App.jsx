@@ -37,6 +37,9 @@ import SetUpPage from './SetUpPage';
 // MATERIAL-UI IMPORTS
 import { Typography, Grid, Paper} from '@material-ui/core';
 
+import PropsAppBar from './PropsAppBar';
+
+
 const styles = {
   Paper: { padding: 20, marginTop: 10, marginBottom: 10}
 }
@@ -143,6 +146,7 @@ class App extends Component {
 
       content = ( 
           <BrowserRouter>
+          <PropsAppBar />
                <Route 
                 path="/home"
                 render={ () => <HomePage user={ user } logout={ this.logout }/> }/>
