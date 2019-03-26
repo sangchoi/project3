@@ -12,6 +12,9 @@ import Signup from './Signup';
 import Login from './Login';
 import PropsLogo from './PropsLogo';
 
+// SIGNUP PROFILE FORM
+import ProfileForm from './ProfileForm';
+
 // HOMEPAGE
 import ProfilePage from './UserProfile';
 import MyPropsShort from './MyPropsShort';
@@ -152,9 +155,12 @@ class App extends Component {
                 render={ () => <HomePage user={ user } logout={ this.logout }/> }/>
              
               <Route 
-                path="/profile"
+                path="/profile" exact
                 render={ () => <ProfilePage user={ user } /> } />
-
+              <Route
+                path="/profile/signup" 
+                render={ () => <ProfileForm user={ user } /> } />
+              
               <Route 
                 path="/community" 
                 render={ () => <CommunityPage user={ user } /> } />
