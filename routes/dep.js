@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 router.route('/')
     // GET all departments, return 200, array of deps
     .get((req, res) => {
-        console.log('GET /deps', req.originalUrl)
+        console.log('GET api/deps', req.originalUrl)
         Dep.find().populate('members').exec((err, Deps) => {
             if (!err) {
                 res.json({ type:'success', message:'returned some departments', data: Deps })
@@ -19,7 +19,7 @@ router.route('/')
     })
     // create one dep, return 201, no data
     .post((req, res) => {
-        console.log('POST /deps', req.originalUrl)
+        console.log('POST api/deps', req.originalUrl)
         let dep = new Dep({ name: req.body.name, members: req.body.members })
         dep.save((err, dep) => {
             console.log('response from db: ', { err, dep })
@@ -36,7 +36,7 @@ router.route('/')
 router.route('/:id')
     // get one dep, return 200, one dep
     .get((req, res) => {
-        console.log('GET /deps/:id', req.originalUrl)
+        console.log('GET api/deps/:id', req.originalUrl)
         Dep.findById(req.params.id, (err, dep) => {
             // if no error, send back the department without any population
             if(!err) {
@@ -48,11 +48,10 @@ router.route('/:id')
     })
     .put((req, res) => {
         // update one dep, return 203, no data
-        console.log('PUT /deps/:id', req.originalUrl)
-        console.log(JSON.parse(req.body.members), typeof JSON.parse(req.body.members))
+        console.log('PUT api/deps/:id', req.originalUrl)
+        console.log(req.body.members)
         Dep.findByIdAndUpdate(req.params.id, {
-            name: req.body.name,
-            $addToSet: { members: { $each : JSON.parse(req.body.members) } }
+            $addToSet: { members: { $each : req.body.members } }
         }, {
             new: true
         }, (err, dep) => {
@@ -67,7 +66,7 @@ router.route('/:id')
     // get one dep and its users
 router.get('/:id/users', (req, res) => {
     // get one dep with users: return 200, dep with users
-    console.log('GET /:id/users')
+    console.log('GET api/:id/users')
     Dep.findById(req.params.id).populate('members').exec((err, dep) => {
         if (!err) {
             res.status(200).json({ type: 'success', message: 'request for dep and users successful', data: dep })
@@ -76,7 +75,7 @@ router.get('/:id/users', (req, res) => {
         }
     })
 })
-router.get('GET /:id/users/props', (req, res) => {
+router.get('GET api/:id/users/props', (req, res) => {
     // get one dep, return 200, its users and their props
     Dep.findById(req.params.id).populate({ path: 'members'}).exec((err, dep) => {
         // get the dep and its users
