@@ -1,0 +1,12 @@
+.homebox {
+    font-family: 'CircularStd-Medium';
+    text-align: center;
+    min-height: 100vh;
+    margin: 0;
+    display: grid;
+    grid-template-columns: .5fr .5fr;
+    grid-template-rows: .1fr .9fr;
+    grid-template-areas: "propsLogoDiv loginDiv"
+                        "propsLogoDiv signupDiv";
+  }
+

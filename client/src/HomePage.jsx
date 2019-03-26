@@ -2,6 +2,7 @@ import React from 'react';
 import PropsFeed from './PropsFeed';
 import UserProfile from './UserProfile';
 import MyPropsShort from './MyPropsShort'
+import './HomePage.css';
 
 const HomePage = props => {
     return (
@@ -9,7 +10,7 @@ const HomePage = props => {
             <div className="homebox-left">
                 <PropsFeed />
             </div>
-            <div classNam="homebox-right">
+            <div className="homebox-right">
                 <div className="profile-short">
                     <UserProfile user={props.user} />
                 </div>
