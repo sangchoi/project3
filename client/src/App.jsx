@@ -34,6 +34,9 @@ import CommunityPage from './CommunityPage';
 // TOWN SQUARE
 import TownSquare from './TownSquare';
 
+// CHAT PAGE
+import Chat from './Chat';
+
 // SET-UP PAGE
 import SetUpPage from './SetUpPage';
 
@@ -172,6 +175,10 @@ class App extends Component {
               <Route 
                 path="/setup" 
                 component={ SetUpPage } />
+
+              <Route
+                path="/chat"
+                component={ Chat } />
 
               <p><button onClick={ this.handleClick } >Test the protected route...</button></p>
               <p>{ this.state.lockedResult }</p>

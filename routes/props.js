@@ -3,9 +3,8 @@ const express = require('express');
 const router = express.Router();
 const Props = require('../models/props');
 
-router.route('/')
-    // get all props
-    .get((req, res) => {
+// GET - get all props
+router.get('/', (req, res) => {
         console.log('GET /props')
         Props.find()
         .exec()
@@ -17,7 +16,6 @@ router.route('/')
             res.status(500).json({type: 'error', message: err.message})
         })
     })
-
 // GET /:id - Get one props
 router.get('/:id', (req, res) => {
     Props.findById(req.params.id, (err, props) => {

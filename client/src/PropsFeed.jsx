@@ -18,6 +18,7 @@ class PropsFeed extends Component {
             })
         })
     }
+    // function to update feed immediately
     render() {
         let myPropsList = this.state.props.map( (prop, index) => {
             return <li key={index}>{prop.body}</li>
