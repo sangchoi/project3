@@ -146,16 +146,16 @@ class App extends Component {
                <Route 
                 path="/home"
                 render={ () => <HomePage user={ user } logout={ this.logout }/> }/>
-              {/*
-              <Route 
+             
+              {/* <Route 
                 path="/profile"
-                render={ () => <ProfilePage user={ user } /> } />
+                render={ () => <ProfilePage user={ user } /> } /> */}
 
               <Route 
                 path="/community" 
                 render={ () => <CommunityPage user={ user } /> } />
 
-              <Route 
+              {/* <Route 
                 path="/square" 
                 component={ TownSquare } />  */}
 
