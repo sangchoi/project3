@@ -26,15 +26,18 @@ The idea we settled on was PROPS, an application with a focus on employee engage
 Given the nature of the final product, it was decided that the more prudent move would be to create an app focused towards desktop use, rather than mobile. The (extremely witty and clever) name, PROPS, was decided upon due to the function the app was performing, in addition to the front end being built in React. 
 
 ## Day 2
-// an outline for memory's sake
-- [x] presented our ideas in stand-up
-- [x] user stories
-    - got in the weeds
-- [x] wireframes
-- [x] ERD
-- [x] route maps
-- [x] trello board
-- [x] tickled the keys
+Day 2 began with the presentation of our idea in our daily stand-up. With feedback being positive, we felt that we'd made the right choice and moved onwards with our planning stage.
+Planning began with user stories and, as is often the case, we got completely lost on a number of tangents, planning amazing features that would make our app the best thing ever. While these ideas are all well and good in theory, we were able to pull ourselves back to reality just long enough to get the basic features set out.
+We spent a sizeable portion of the day creating our wireframes and route maps, somehow managing to find consensus on all of these, and were able to create a solid enough framework to begin assigning tasks to each team member. The use of our Trello Board was extremely useful for this.
+Afterwards, it was coding time!!!
 
-## Day 3
+## Day 3/4
+Days 3 and 4 happened to be a weekend, not something any of us had encountered throughout previous projects. As Gavin had to move apartment this weekend, it was left to FX and Sang to hold down the fort and hold it down they did(!), with the entire backend being fully functional by the time Monday came around.
+As project parameters stated the app should be MERN-stack, MongoDB was used, with all routes being created in Mongoose.
+Despite this being a particularly labor intensive part of the project, it was relatively uneventful and, aside from a few minor hiccups, we were in a really strong place to begin the next week.
 
+## Day 5
+Day 5 was a Monday, a very Monday, Monday. 
+That morning we divided a number of tasks between us, with Sang working on attempting to bring Material UI into the project; FX looking into a variety of potential options for data visualization and Gavin focusing on further creation and gathering together of React components.
+As the afternoon came around, it became apparent that some refactoring would be required. Rather than focusing on integrating components through a central jsx file, we decided to look at each page as a parent component to the supplementary components which enabled them to function. This decision was made on the basis of both functionality and organization, two things we wanted to make sure were given more than adequate focus throughout our time working together.
+While we did indeed meet MVP requirements during the afternoon, we decided to take this step back in order to take two forward and continued working on refactoring for the remainder of the day and evening.

@@ -29,7 +29,7 @@ import HomePage from './HomePage';
 import CommunityPage from './CommunityPage';
 
 // TOWN SQUARE
-// import TownSquare from './TownSquare';
+import TownSquare from './TownSquare';
 
 // SET-UP PAGE
 import SetUpPage from './SetUpPage';
@@ -159,9 +159,9 @@ class App extends Component {
                 path="/community" 
                 render={ () => <CommunityPage user={ user } /> } />
 
-              {/* <Route 
+              <Route 
                 path="/square" 
-                component={ TownSquare } />  */}
+                component={ TownSquare } /> 
 
               <Route 
                 path="/setup" 
