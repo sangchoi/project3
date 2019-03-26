@@ -81,13 +81,13 @@ export default class Login extends Component {
             <div className="login">
             <Grid>
             <Paper style={styles.Paper} elevation={5}>
-                <Typography variant="h6">Log in to your account</Typography>
+                <Typography variant="h6" align="right" inline="true">Log in to your account</Typography>
                 <form onSubmit={ this.handleSubmit } >
                 <i class="material-icons" style={styles.Icon}>email</i>
                 <TextField label="Email"><input onChange={this.handleEmailChange} value={this.state.email}type="email" name="email" placeholder="Enter your email..."/></TextField>
                 <i class="material-icons" style={styles.Icon}>lock</i>
                 <TextField label="Password"><input onChange={this.handlePasswordChange} value={this.state.password} type="password" name="password" placeholder="Enter your password..."/></TextField>
-                <Button variant="outlined"><input type="submit" value="Log In!"/></Button>
+                <input type="submit" value="Log In!"/>
                 </form>
                 </Paper>
                 </Grid>
