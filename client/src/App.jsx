@@ -13,7 +13,7 @@ import Login from './Login';
 import PropsLogo from './PropsLogo';
 
 // HOMEPAGE
-import UserProfile from './UserProfile';
+import ProfilePage from './UserProfile';
 import MyPropsShort from './MyPropsShort';
 import PropsFeed from './PropsFeed';
 
@@ -151,9 +151,9 @@ class App extends Component {
                 path="/home"
                 render={ () => <HomePage user={ user } logout={ this.logout }/> }/>
              
-              {/* <Route 
+              <Route 
                 path="/profile"
-                render={ () => <ProfilePage user={ user } /> } /> */}
+                render={ () => <ProfilePage user={ user } /> } />
 
               <Route 
                 path="/community" 
