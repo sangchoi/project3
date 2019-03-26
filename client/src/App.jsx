@@ -175,8 +175,7 @@ class App extends Component {
       )
     } else {
       content = (
-        // <div className="authenticate">
-        <React.Fragment>
+        <div className="SplashPage">
             <div className="LoginDiv">
             <Login styles={styles} liftToken={this.liftTokenToState} liftMessage={this.liftMessageToState} />
             </div>
@@ -187,8 +186,7 @@ class App extends Component {
             <Signup styles={styles} liftToken={this.liftTokenToState} liftMessage={this.liftMessageToState} />
             <h3>{ this.state.message }</h3> 
             </div>
-            </React.Fragment>
-        // </div>
+        </div>
       )
     }
     return (
