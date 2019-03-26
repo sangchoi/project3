@@ -7,3 +7,19 @@
  
   color: rgb(4, 80, 41);
 }
+
+
+/* This is for the nav for dev purposes only */
+.PropsAppBar > * {
+  padding: .5em 1em;
+  font-size: 20px;
+  text-decoration: none;
+}
+.PropsAppBar button {
+  background: none;
+  box-shadow: none;
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: .5em 1em;
+  font-size: 18px;
+}
