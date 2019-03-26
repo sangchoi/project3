@@ -1,9 +1,13 @@
 import React from 'react';
-import {Typography} from '@material-ui/core'
+import logo from './imgs/CMYK-Red-Black_Small_GeneralAssembly-Stacked.png'
+
 
 const PropsLogo = props => {
     return (
-        <header className="pageOneHeader"><Typography variant="h1"><h1>Props</h1></Typography></header>
+        <React.Fragment>
+        <header className="PropsLogoText"><h1>Props</h1></header>
+        <img className="GeneralAssemblyLogo" src={logo} alt="Logo" />
+        </React.Fragment>
     )
 
 }

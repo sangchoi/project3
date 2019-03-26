@@ -1,12 +1,136 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: 'CircularStd-Black';
+  src: local('CircularStd-Black'), url(./fonts/CircularStd-Black.otf) format('opentype');
 }
 
-.pageOneHeader {
+@font-face {
+  font-family: 'CircularStd-BlackItalic';
+  src: local('CircularStd-BlackItalic'), url(./fonts/CircularStd-BlackItalic.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'CircularStd-Bold';
+  src: local('CircularStd-Bold'), url(./fonts/CircularStd-Bold.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'CircularStd-BoldItalic';
+  src: local('CircularStd-BoldItalic'), url(./fonts/CircularStd-BoldItalic.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'CircularStd-Book';
+  src: local('CircularStd-Book'), url(./fonts/CircularStd-Book.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'CircularStd-BookItalic';
+  src: local('CircularStd-BookItalic'), url(./fonts/CircularStd-BookItalic.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'CircularStd-Medium';
+  src: local('CircularStd-Medium'), url(./fonts/CircularStd-Medium.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'CircularStd-MediumItalic';
+  src: local('CircularStd-MediumItalic'), url(./fonts/CircularStd-MediumItalic.otf) format('opentype');
+}
+
+
+
+.App {
   font-family: 'Fredoka One', cursive;
- 
+  text-align: center;
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  grid-template-columns: .5fr .5fr;
+  grid-template-rows: .1fr .9fr;
+  grid-template-areas: "loginDiv loginDiv"
+                      "propsLogoDiv signupDiv";
+}
+
+/* App.jsx ------------------------------------------------------------------------- */
+
+.LoginDiv {
+  grid-area: loginDiv;
+  border: 1px red solid;
+  text-align: right;
+}
+
+.PropsLogoDiv {
+  grid-area: propsLogoDiv;
+  border: 1px red solid;
+  font-size: 5em;
+  font-family: 'CircularStd-Black';
   color: rgb(4, 80, 41);
 }
+
+.SignupDiv {
+  grid-area: signupDiv;
+  border: 1px red solid;
+}
+
+/* Login.jsx ------------------------------------------------------------------------- */
+
+.LoginText {
+  display: inline-block;
+  padding: 10px;
+}
+
+.LoginForm {
+  display: inline-block;
+}
+
+.LoginInput {
+  margin: 0 5px 0 5px;
+}
+
+.LoginButton {
+  margin: 0 20px 0 5px;
+}
+
+
+/* PropsLogo.jsx ------------------------------------------------------------------------- */
+
+
+.PropsLogoText {
+  margin: 120px 0 0 0;
+}
+
+.GeneralAssemblyLogo {
+  width: 50%;
+  height: 30%;
+  border: 1px red solid;
+}
+
+/* Signup.jsx ------------------------------------------------------------------------- */
+
+.SignupText {
+  margin: 120px 0 0 0;
+  font-size: 3em;
+}
+
+.SignupForm {
+  margin: 20px 0 0 0;
+}
+
+.SignupInput {
+  margin: 10px;
+  border: none;
+  border-bottom: 1px solid rgb(252, 1, 1);
+  width: 200px;
+  height: 50px;
+  font-size: 1em;
+}
+
+
+
+
+
+
 
 
 /* This is for the nav for dev purposes only */
@@ -23,3 +147,4 @@
   padding: .5em 1em;
   font-size: 18px;
 }
+

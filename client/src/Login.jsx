@@ -1,15 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-// MATERIAL-UI
-import {AppBar, Paper} from '@material-ui/core'
-
-
-// MATERIAL-UI VARIABLES
-const styles = {
-    Paper: { padding: 20, marginTop: 10, marginBottom: 10}
-  }
-  
 
 export default class Login extends Component {
     constructor(props) {
@@ -74,15 +65,14 @@ export default class Login extends Component {
     }
     render() {
         return(
-            <div className="login">
-            <Paper style={styles.Paper}>
-                <h3>Log in to your account</h3>
-                <form onSubmit={ this.handleSubmit } >
-                    <input onChange={this.handleEmailChange} value={this.state.email}type="email" name="email" placeholder="Enter your email..."/>
-                    <input onChange={this.handlePasswordChange} value={this.state.password} type="password" name="password" placeholder="Enter your password..."/>
-                    <input type="submit" value="Log In!"/>
+            <div className="Login">
+                <p className="LoginText">Log in to your account</p>
+                <form className="LoginForm" onSubmit={ this.handleSubmit } >
+                <input className="LoginInput" onChange={this.handleEmailChange} value={this.state.email}type="email" name="email" placeholder="Enter your email..."/>
+                <input className="LoginInput" onChange={this.handlePasswordChange} value={this.state.password} type="password" name="password" placeholder="Enter your password..."/>
+                <input className="LoginButton" type="submit" value="Log In!"/>
                 </form>
-                </Paper>
+               
             </div>
         )
     }

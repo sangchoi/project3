@@ -175,26 +175,25 @@ class App extends Component {
       )
     } else {
       content = (
-        <div className="authenticate">
-        <Grid container spacing={12}>
-          <Grid item xs={12} md={12}>
+        // <div className="authenticate">
+        <React.Fragment>
+            <div className="LoginDiv">
             <Login styles={styles} liftToken={this.liftTokenToState} liftMessage={this.liftMessageToState} />
-          </Grid>
-          <Grid item xs={6} md={6}>
+            </div>
+            <div className="PropsLogoDiv">
             <PropsLogo />
-          </Grid>
-          <Grid item xs={6} md={6}>
+            </div>
+            <div className="SignupDiv">
             <Signup styles={styles} liftToken={this.liftTokenToState} liftMessage={this.liftMessageToState} />
-          </Grid>
-        </Grid>
-
-        </div>
+            <h3>{ this.state.message }</h3> 
+            </div>
+            </React.Fragment>
+        // </div>
       )
     }
     return (
       <div className="App">
-        <h3>{ this.state.message }</h3> 
-        <Typography variant="h3">{content}</Typography>
+        {content}
       </div>
     )
   }
