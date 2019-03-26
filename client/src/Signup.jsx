@@ -81,14 +81,14 @@ export default class Signup extends Component {
     render() {
         console.log('rendering signup')
         return (
-            <div className="signup">
+            <div className="Signup">
             
-                <h3>Hello! Create an account! </h3>
-                <form onSubmit={this.handleSubmit} >
-                    <input onChange={this.handleNameChange} value={this.state.name} type="text" name="name" placeholder="Enter your full name"/><br />
-                    <input onChange={this.handleEmailChange} value={this.state.email} type="email" name="email" placeholder="Enter your email address"/><br />
-                    <input onChange={this.handlePasswordChange} value={this.state.password} type="password" name="password" placeholder="Choose a password..."/><br />
-                    <input type="submit" value="Sign Up!"/>
+                <h3 className="SignupText">Hello! Create an account! </h3>
+                <form className="SignupForm" onSubmit={this.handleSubmit} >
+                    <label className="SignupLabel">Full Name:<input className="SignupInput" onChange={this.handleNameChange} value={this.state.name} type="text" name="name" placeholder="Enter your full name"/></label><br />
+                    <label className="SignupLabel">Email:<input className="SignupInput" onChange={this.handleEmailChange} value={this.state.email} type="email" name="email" placeholder="Enter your email address"/></label><br />
+                    <label className="SignupLabel">Password:<input className="SignupInput" onChange={this.handlePasswordChange} value={this.state.password} type="password" name="password" placeholder="Choose a password..."/></label><br />
+                    <input className="SignupButton" type="submit" value="Sign Up!"/>
                 </form>
                 
             </div>
