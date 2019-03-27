@@ -33,17 +33,14 @@ class ProfileForm extends Component {
         })
         // make profile and add it to user
         console.log('/api/profile')
-        console.log({
-            interests: this.state.interests,
-            groups: this.state.groups,
-            photo: this.state.photo,
-            userId: this.props.user._id
-        })
         axios.post('/api/profile', {
             interests: this.state.interests,
             groups: this.state.groups,
             photo: this.state.photo,
             userId: this.props.user._id
+        }).then(res => {
+            console.log(res)
+            this.props.hideProfileForm()
         })
 
     }
