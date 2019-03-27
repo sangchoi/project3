@@ -6,8 +6,10 @@ const JWT = require('jsonwebtoken');
 // Route for signup
 router.post('/signup', (req, res, next) => {
     console.log('POST /signup', req.body)
-    // see if the email is already in the db
-    User.findOne({email: req.body.email}, (err, user) => {
+    // make sure email is all lowercase
+    let email = req.body.email.toLowerCase()
+    User.findOne({ email }, (err, user) => {
+        // see if the email is already in the db
         console.log('POST /signup, {err, user}', {err, user} )
         // if db error, catch it 
         if (err) {
@@ -51,8 +53,10 @@ router.post('/signup', (req, res, next) => {
 // Route for login
 router.post('/login', (req, res) => {
     console.log('POST /login', req.body)
+    // make email case-insensitive
+    let email = req.body.email.toLowerCase()
     // Find user in db
-    User.findOne({ email: req.body.email }, (err, user) => {
+    User.findOne({ email }, (err, user) => {
         console.log('findOne user:', {err, user})
         if (!user) {
             // if no user, return error
