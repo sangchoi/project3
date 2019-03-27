@@ -53,7 +53,7 @@ class App extends Component {
       user: null,
       message: '',
       lockedResult: '',
-      showProfileForm: false
+      showProfileForm: false,
     }
     this.liftTokenToState = this.liftTokenToState.bind(this)
     this.liftMessageToState = this.liftMessageToState.bind(this)

@@ -9,10 +9,17 @@ class Chat extends Component {
             messages: [],
             senderId: props.user._id,
             body: '',
+            pollingInterval: null
         }
     }
     componentDidMount() {
-        this.getMessages();
+        let pollingInterval = setInterval(this.getMessages, 1000)
+        this.setState({
+            pollingInterval
+        })
+    }
+    componentWillUnmount() {
+        clearInterval(this.state.pollingInterval)
     }
     handleTextArea = (e) => {
         let body = e.target.value
