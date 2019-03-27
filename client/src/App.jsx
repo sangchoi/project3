@@ -167,35 +167,10 @@ class App extends Component {
       if (!this.state.showProfileForm) {
         content = ( 
             <BrowserRouter>
-            {/* <PropsAppBar /> */}
                 <Route 
                   path="/home"
                   render={ () => <HomePage user={ user } logout={ this.logout }/> }/>
-              
-<<<<<<< HEAD
-              <Route 
-                path="/community" 
-                render={ () => <CommunityPage user={ user } /> } />
 
-              <Route 
-                path="/square" 
-                component={ TownSquare } /> 
-
-              <Route 
-                path="/setup" 
-                component={ SetUpPage } />
-
-              <Route
-                path="/chat"
-                render={ () => <Chat user={ user } /> } />
-
-              <p><button onClick={ this.handleClick } >Test the protected route...</button></p>
-              <p>{ this.state.lockedResult }</p>
-          </BrowserRouter>
-
-
-      )
-=======
                 <Route 
                   path="/profile" exact
                   render={ () => <ProfilePage user={ user } /> } />
@@ -215,6 +190,10 @@ class App extends Component {
                   path="/setup" 
                   component={ SetUpPage } />
 
+                <Route
+                  path="/chat"
+                  render={ () => <Chat user={ user} /> } />
+
                 <p><button onClick={ this.handleClick } >Test the protected route...</button></p>
                 <p>{ this.state.lockedResult }</p>
             </BrowserRouter>
@@ -224,7 +203,6 @@ class App extends Component {
           <ProfileForm user={ user } hideProfileForm={ this.hideProfileForm } />
           )
       }
->>>>>>> b7a71b9c7e9c891201fd6a2499511ce07dd00b3e
     } else {
       content = (
         <div className="SplashPage">

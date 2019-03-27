@@ -45,11 +45,8 @@ app.use('/api/user', require('./routes/user'));
 app.use('/api/props', require('./routes/props'));
 app.use('/api/deps', require('./routes/dep'));
 app.use('/api/profile', require('./routes/profile'));
-<<<<<<< HEAD
 app.use('/api/chat', require('./routes/chat'));
-=======
 app.use('/api/seed', require('./routes/seedDb.js'))
->>>>>>> b7a71b9c7e9c891201fd6a2499511ce07dd00b3e
 
 app.listen(process.env.EXPRESS_PORT, () => {
     console.log(`You're listening to the sweet sounds of ${process.env.EXPRESS_PORT} PROPS in the morning...`)
