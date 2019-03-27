@@ -14,7 +14,8 @@
 
 .HomePageNavDiv {
     grid-area: homepagenav;
-    /* border: 1px red solid; */
+    border: 1px red solid;
+    background-color: rgb(34, 34, 34);
     
 }
 
@@ -71,7 +72,7 @@
 }
 
 .NavButton1 {
-    margin: 10px 20px 0px 620px;
+    margin: 10px 20px 0px 480px;
 }
 
 .GaLogo1 {
@@ -81,6 +82,7 @@
     width: 8%;
     height: 3%;
     /* border: 1px red solid; */
+    
   }
 
 /* PropsFeed.jsx ------------------------------------------------------------------------- */
