@@ -7,7 +7,7 @@ const Props = require('../models/props')
 
 // GET /user - Get all users in the organization
 router.get('/', (req, res) => {
-    User.find({}, (err, users) => {
+    User.find({},).populate('profile').exec( (err, users) => {
         console.log("THESE ARE ALL THE USERS:", users)
         if (!err) {
             res.status(200).json(users);
@@ -20,7 +20,7 @@ router.get('/', (req, res) => {
 
 // GET /users/:id - Get one user
 router.get('/:id', (req, res) => {
-    User.findById(req.params.id).populate('profiles').exec( (err, user) => {
+    User.findById(req.params.id).populate('profile').populate('department').exec( (err, user) => {
         if(!err) {
             res.status(200).json(user);
         } else {
