@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import './ProfileForm.css'
 
 class ProfileForm extends Component {
     // props include 'user' from app.jsx
@@ -59,20 +60,32 @@ class ProfileForm extends Component {
         let options = this.state.deps.map( (dep, i) => <option value={ dep._id } key={ i } >{ dep.name }</option> )
         return (
             <div className="ProfileForm">
-                <h3>Make A Profile</h3>
-                <form onSubmit={ this.handleSubmit }>
-                    <input name="photo" onChange={ this.handleInputChange } type="text" placeholder="Enter a photo url here" />
+                <h3 className="MakeProfileText">Make A Profile</h3>
+                <form className="ProfileFormBox" onSubmit={ this.handleSubmit }>
+                <label className="ProfileFormLabel">Photo URL:
+                
+                    <input className="ProfileFormInput ProfileFormInput1" name="photo" onChange={ this.handleInputChange } type="text" placeholder="Enter a photo url here" />
+                    </label>
                     <br/>
-                    <select name="dep" id="dep" onChange={ this.handleInputChange }>
-                        <option value="" hidden="hidden">Choose your Community</option>
+                    <label className="ProfileFormLabel">Community:
+                   
+                    <select className="ProfileFormInput ProfileFormInput2" name="dep" id="dep" onChange={ this.handleInputChange }>
+                    <option value="" hidden="hidden">Choose your Community</option>
                         { options }
                     </select>
+                    </label>
                     <br/>
-                    <input name="interests" onChange={ this.handleInputChange } type="text" placeholder="Enter your interests here"/>
+                    <label className="ProfileFormLabel">Interests:
+                    <input className="ProfileFormInput ProfileFormInput3" name="interests" onChange={ this.handleInputChange } type="text" placeholder="Enter your interests here"/>
+                    </label>
                     <br/>
-                    <input name="groups" onChange={ this.handleInputChange } type="text" placeholder="Enter your groups here"/>
+                    <label className="ProfileFormLabel">Groups:
+                    
+                    <input className="ProfileFormInput ProfileFormInput4" name="groups" onChange={ this.handleInputChange } type="text" placeholder="Enter your groups here"/>
+                    </label>
                     <br/>
-                    <input onChange={ this.handleInputChange } type="submit" value="done" />
+                    <br/>
+                    <input className="SUBMIT" onChange={ this.handleInputChange } type="submit" value="done" />
                 </form>
             </div>
         )
