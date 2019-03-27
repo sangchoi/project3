@@ -5,13 +5,13 @@ export default function UserProfile({ user, logout }) {
         <div className="Profile">     
             {/* <button onClick={ logout }>Log Out!</button> */}
             <div className="ProfilePicBox">
-            <h2>{ user.name }'s Profile</h2>
+            <h2 className="ProfileNameText">{ user.name }'S PROFILE</h2>
             <img src="https://via.placeholder.com/150" alt="user avatar large"/>
             </div>
             <div className="ProfileDetailsBox">
-            <p>User name: { user.name }</p>
-            <p>User email: { user.email }</p>
-            <p>User department: { user.dep }</p>
+            <p>USER NAME: { user.name }</p>
+            <p>USER EMAIL: { user.email }</p>
+            <p>USER DEPARTMENT: { user.dep }</p>
             </div>
         </div>
     )

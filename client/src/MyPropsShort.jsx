@@ -27,10 +27,7 @@ class MyPropsShort extends Component {
         return ( 
             <div className="MyProps">
                 <div className="MyPropsTextBox">
-                <h2>These are my props</h2>
-                <p>Example props</p>
-                <p>[ingoing/outgoing icon] [content of props] [who the recipient is]</p>
-                <p>Real props should show up below:</p>
+                <h2 className="MyPropsText">MY PROPS</h2>
                 { MyPropsList }
                 </div>
             </div>
