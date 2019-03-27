@@ -24,6 +24,7 @@
     "express-rate-limit": "^3.4.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.4.19",
+    "recharts": "^1.5.0",
     "socket.io": "^2.2.0"
   }
 }

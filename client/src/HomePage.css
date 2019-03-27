@@ -25,7 +25,7 @@
     grid-area: propsfeed;
     border: 2px rgb(125, 234, 216) solid;
     border-radius: 50px;
-    margin: 10px;
+    margin: 20px 20px;
     width: 650px;
     background-color: rgba(125, 234, 216, .2);
     color: rgb(125, 234, 216);
@@ -36,23 +36,27 @@
 
 .profile-short {
     grid-area: profileshort;
-    border: 1px rgb(200, 149, 190) solid;
-    /* display: flex;
-    flex-direction: row; */
+    border: 2px rgb(200, 149, 190) solid;
     border-radius: 50px;
-    margin: 10px;
+    margin: 70px 20px;
+    width: 650px;
     background-color: rgba(200, 149, 190, .2);
     color: rgb(200, 149, 190);
     box-shadow: 30px -20px rgba(200, 149, 190, .5);
-    text-shadow: -5.5px -4px rgba(200, 149, 190, .5);
+    
     
 }
 
 .props-short {
     grid-area: propsshort;
-    border: 1px rgb(255, 218, 0) solid;
+    border: 2px rgb(255, 218, 0) solid;
     border-radius: 50px;
-    margin: 10px;
+    margin: 40px 20px;
+    width: 650px;
+    background-color: rgba(255, 218, 0, .2);
+    color: rgb(255, 218, 0);
+    box-shadow: 30px -20px rgba(255, 218, 0, .5);
+
     
     
 }
@@ -107,9 +111,6 @@
 
 /* UserProfile.jsx ------------------------------------------------------------------------- */
 
-/*.profile-short > div {
-
-}*/
 
 .ProfilePicBox {
     display: inline-block;
@@ -119,44 +120,33 @@
     /* border: 1px blue solid; */
 }
 
+.ProfileNameText {
+    font-size: 2em;
+    margin: 10px 0px;
+    text-shadow: -4px -3px rgba(200, 149, 190, .5);
+}
+
 .ProfileDetailsBox {
     display: inline-block;
     vertical-align: top;
     margin: 80px 10px 0 0;
     /* border: 1px blue solid; */
-    padding: 10px 10px 10px 10px;
+    padding: 10px 10px 10px 0;
+    font-family: 'CircularStd-Bold';
+    
 }
 
 
 /* MyPropsShort.jsx ------------------------------------------------------------------------- */
-
 
 .MyPropsTextBox {
     margin: 10px 10px 40px 30px;
     padding: 30px;
 }
 
+.MyPropsText {
+    text-shadow: -4px -3px rgba(255, 218, 0, .5);
+    font-size: 2em;
+}
 
 
-
-/* NAVIGATION ------------------------------------------------------------------------- */
-
-/* This is for the nav for dev purposes only
-.PropsAppBar > * {
-    padding: .5em 1em;
-    font-size: 20px;
-    text-decoration: none;
-    border: 1px rgb(228, 26, 35) solid;
-  }
-  
-  .PropsAppBar button {
-    background: none;
-    box-shadow: none;
-    border: 1px solid black;
-    border-radius: 3px;
-    padding: .5em 1em;
-    font-size: 18px;
-    border: 1px rgb(228, 26, 35) solid;
-  }
-   */
-  
