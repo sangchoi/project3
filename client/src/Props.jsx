@@ -1,22 +1,28 @@
 import React from 'react';
+import Icon from '@material-ui/core/Icon';
 
 const Props = ({ singleProps, user }) => {
-    console.log('user ID', user._id, 'singlePropsFrom', singleProps.from )
-    console.log('in the props component', singleProps)
-    if ( user._id === singleProps.from._id ) {
+    console.log('is user null?', user)
+    if (!user) {
+        return (
+            <div className="singleProps global">
+                <img src="http://via.placeholder.com/50" alt="avatar"/>
+                <span className="body" > { singleProps.body } </span>
+            </div>
+        )
+    } else if ( user._id === singleProps.from._id ) {
         return (
             <div className="singleProps incoming">
-                <i>out_arrow_icon</i>
-                <span>Body: { singleProps.body }</span>
+                <Icon>call_made</Icon>
+                <span className="body">Body: { singleProps.body }</span>
                 <span>From: { singleProps.from.name }</span>
             </div>
         )
-    }
-    if ( user._id === singleProps.to._id ) {
+    } else if ( user._id === singleProps.to._id ) {
         return (
             <div className="singleProps outgoing">
-                <i>in_arrow</i>
-                <span>Body: { singleProps.body }</span>
+                <i>call_received</i>
+                <span className="body">Body: { singleProps.body }</span>
                 <span>To: { singleProps.to.name }</span>
             </div>
         )

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Props from './Props';
 
 class PropsFeed extends Component {
     constructor(props) {
@@ -37,9 +38,13 @@ class PropsFeed extends Component {
     render() {
         let pagenum = this.state.page
         // console.log('here are the nums', pagenum * 12, pagenum + 1 *)
-        let myPropsList = this.state.props.slice(pagenum * 12, (pagenum + 1) * 12).map( (prop, index) => {
-            return <li key={index}>{prop.body}</li>
-        })
+        let myPropsList = this.state.props
+            .slice(pagenum * 12, (pagenum + 1) * 12)
+            .map( (singleProps, i) => <Props singleProps={ singleProps } user={ null } key={ i }  />
+        )
+        if (myPropsList.length === 0) {
+            myPropsList = null
+        }
         return(
             <div>
             <p className="PropsFeedText">COMMUNITY PROPS</p>
