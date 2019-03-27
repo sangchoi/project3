@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const depSchema = new Schema({
     name: String,
-    members: [Schema.Types.ObjectId]
+    members: [{type: Schema.Types.ObjectId, ref: 'User'}]
 });
 
 module.exports = mongoose.model('Dep', depSchema);
