@@ -1,0 +1,64 @@
+.profile-box {
+    font-family: 'CircularStd-Medium';
+    min-height: 100vh;
+    margin: 0;
+    display: grid;
+    grid-template-columns: .5fr .5fr;
+    grid-template-rows: .3fr .7fr;
+    grid-template-areas: "profilepagenavdiv profilepagenavdiv"
+                         "profilepageuserprofile profilepageprofilelong";
+  }
+
+/* ProfilePage.jsx ------------------------------------------------------------------------- */
+
+.ProfilePageNavDiv {
+    grid-area: profilepagenavdiv;
+    border: 1px red solid;
+}
+
+.ProfilePageUserProfile {
+    grid-area: profilepageuserprofile;
+    border: 1px red solid;
+}
+
+.ProfilePageProfileLong {
+    grid-area: profilepageprofilelong;
+    border: 1px red solid;
+}
+
+/* PropsAppBar.jsx ------------------------------------------------------------------------- */
+
+.NavButton {
+    margin: 10px 20px 0px 10px;
+    width: 110px;
+    height: 40px;
+    border-radius: 12px;
+    border-color: rgb(228, 26, 35);
+    background-color:  rgb(228, 26, 35);
+    font-family: 'CircularStd-Bold';
+    font-size: 1em;
+    color: white;
+   
+}
+
+.NavButton:hover {
+    border-color: rgb(61, 107, 211);
+    background-color: rgb(61, 107, 211);
+}
+
+.NavButton:focus {
+    outline: none;
+}
+
+.NavButton1 {
+    margin: 10px 20px 0px 620px;
+}
+
+.GaLogo1 {
+    display: inline-block;
+    margin: 0 0 0 10px;
+    padding: 0;
+    width: 8%;
+    height: 3%;
+    /* border: 1px red solid; */
+  }

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './SetUpPage.css';
 import axios from 'axios';
+import PropsAppBar from './PropsAppBar';
+import './SetUpPage.css';
 
 class SetUpPage extends Component {
     constructor(props) {
@@ -97,49 +99,55 @@ class SetUpPage extends Component {
             )
         })
         return (
-            <div className="SetUpPage">
-                <h1>Set up your Town</h1>
-                <div className="Teams two-column">
+            <div className="SetUpPageDiv">
+             <div className="SetUpPageNavDiv">
+                <PropsAppBar />
+                </div>
+                {/* <div className="SetUpPage"> */}
+                <h1 className="SetUpYourTown">Set Up Your Town</h1>
+                {/* <div className="Teams two-column"> */}
                     <div className="LeftTeams col1">
-                        <h3>Add Teams</h3>
+                        <h3 className="AddTeamsText">Add Teams</h3>
                         <form name="addDep" onSubmit={ this.handleSubmit }>
-                            <input 
+                            <input className="AddTeamsInput"
                                 name="depName" 
                                 onChange={ this.handleInputChange } 
                                 type="text" 
                                 placeholder="Enter team name here..."/>
-                            <br/>
-                            <input 
+                            <br/><br />
+                            <input className="AddTeamsButton"
                                 onSubmit={ this.handleSubmit } 
                                 type="submit" 
                                 value="Create Department"/>
                         </form>
                     </div>
                     <div className="RightTeams col2">
-                        added teams should show up here
+                    <h3 className="AddedTeamsText">Added Teams should show up here</h3>
                         <ul>
                             {deps}
                         </ul>
                     </div>
-                </div>
-                <div className="People two-column">
+                {/* </div> */}
+                {/* <div className="People two-column"> */}
                     <div className="LeftPeople col1">
-                        <h3>Add People</h3>
+                        <h3 className="AddPeopleText">Add People</h3>
                         <form name="addUser" onSubmit={ this.handleSubmit }>
-                            <input onChange={ this.handleInputChange } type="text" placeholder="Enter name" name="userName"/>
+                            <input className="AddNameInput" onChange={ this.handleInputChange } type="text" placeholder="Enter name" name="userName"/>
                             <br/>
-                            <input onChange={ this.handleInputChange } type="text" placeholder="Enter employee ID here" name="employeeID"/>
-                            <p>Helpful hint: Employee ID is the number that employees will use to sign in for the first time</p>
-                            <input type="submit" value="Create Department"/>
+                            <input className="AddIdInput" onChange={ this.handleInputChange } type="text" placeholder="Enter employee ID here" name="employeeID"/>
+                            <p className="Hint">Helpful hint: Employee ID is the number that employees will use to sign in for the first time</p>
+                            <input className="AddNameButton" type="submit" value="Create Department"/>
                         </form>
                     </div>
                     <div className="RightPeople col2">
+                    <h3 className="AddedPeopleText">Added People</h3>
                         <ul>
                             { users }
                         </ul>
                     </div>
                 </div>
-            </div>
+            // </div>
+            // </div>
         )
     }
 }

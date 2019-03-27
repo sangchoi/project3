@@ -40,7 +40,7 @@ import SetUpPage from './SetUpPage';
 // MATERIAL-UI IMPORTS
 import { Typography, Grid, Paper} from '@material-ui/core';
 
-import PropsAppBar from './PropsAppBar';
+// import PropsAppBar from './PropsAppBar';
 
 
 const styles = {
@@ -164,7 +164,7 @@ class App extends Component {
       if (!this.state.showProfileForm) {
         content = ( 
             <BrowserRouter>
-            <PropsAppBar />
+            {/* <PropsAppBar /> */}
                 <Route 
                   path="/home"
                   render={ () => <HomePage user={ user } logout={ this.logout }/> }/>
