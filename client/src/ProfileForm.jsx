@@ -85,7 +85,7 @@ class ProfileForm extends Component {
                     </label>
                     <br/>
                     <br/>
-                    <input className="SUBMIT" onChange={ this.handleInputChange } type="submit" value="done" />
+                    <input className="SUBMIT" onChange={ this.handleInputChange } type="submit" value="SUBMIT" />
                 </form>
             </div>
         )
