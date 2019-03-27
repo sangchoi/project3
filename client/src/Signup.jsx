@@ -52,6 +52,7 @@ export default class Signup extends Component {
                 console.log('res.data', res.data)
                 console.log('token', res.data.token)
                 localStorage.setItem('jwtToken', res.data.token)
+                this.props.showProfileForm()
                 this.props.liftToken(res.data)
 
             }
@@ -85,10 +86,50 @@ export default class Signup extends Component {
             
                 <h3 className="SignupText">Hello! Create an account! </h3>
                 <form className="SignupForm" onSubmit={this.handleSubmit} >
-                    <label className="SignupLabel">Full Name:<br /><input className="SignupInput SignupInput1" onChange={this.handleNameChange} value={this.state.name} type="text" name="name" placeholder="Enter your full name"/></label><br />
-                    <label className="SignupLabel">Email:<br /><input className="SignupInput" onChange={this.handleEmailChange} value={this.state.email} type="email" name="email" placeholder="Enter your email address"/></label><br />
-                    <label className="SignupLabel">Password:<br /><input className="SignupInput" onChange={this.handlePasswordChange} value={this.state.password} type="password" name="password" placeholder="Choose a password..."/></label><br /><br />
-                    <input className="SignupButton" type="submit" value="Sign Up!"/>
+                    <label 
+                    className="SignupLabel">
+                        Full Name:
+                        <br />
+                        <input 
+                            className="SignupInput SignupInput1" 
+                            onChange={this.handleNameChange} 
+                            value={this.state.name} 
+                            type="text" 
+                            name="name" 
+                            placeholder="Enter your full name"/>
+                    </label>
+                    <br />
+                    <label 
+                        className="SignupLabel">
+                        Email:
+                        <br />
+                        <input 
+                            className="SignupInput" 
+                            onChange={this.handleEmailChange} 
+                            value={this.state.email} 
+                            type="email" 
+                            name="email" 
+                            placeholder="Enter your email address"/>
+                    </label>
+                    <br />
+                    <label 
+                        className="SignupLabel">
+                        Password:
+                        <br />
+                        <input 
+                            className="SignupInput" 
+                            onChange={this.handlePasswordChange} 
+                            value={this.state.password} 
+                            type="password" 
+                            name="password" 
+                            placeholder="Choose a password..."/>
+                    </label>
+                    <br />
+                    <br />
+                        <input 
+                            className="SignupButton" 
+                            type="submit" 
+                            value="Sign Up!"/>
                 </form>
                 
             </div>

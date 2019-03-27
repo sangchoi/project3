@@ -84,11 +84,11 @@
   font-family: 'CircularStd-Black';
 }
 
-.GeneralAssemblyLogo {
+.GaLogo {
   display: inline-block;
-  margin: 10px 0 0 200px;
-  width: 35%;
-  height: 20%;
+  margin: 5px 0 0 150px;
+  width: 40%;
+  height: 15%;
   /* border: 1px red solid; */
 }
 
@@ -175,21 +175,4 @@
   color: white;
 }
 
-
-/* NAVIGATION ------------------------------------------------------------------------- */
-
-/* This is for the nav for dev purposes only */
-.PropsAppBar > * {
-  padding: .5em 1em;
-  font-size: 20px;
-  text-decoration: none;
-}
-.PropsAppBar button {
-  background: none;
-  box-shadow: none;
-  border: 1px solid black;
-  border-radius: 3px;
-  padding: .5em 1em;
-  font-size: 18px;
-}
 

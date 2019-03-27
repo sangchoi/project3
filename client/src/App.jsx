@@ -43,7 +43,7 @@ import SetUpPage from './SetUpPage';
 // MATERIAL-UI IMPORTS
 import { Typography, Grid, Paper} from '@material-ui/core';
 
-import PropsAppBar from './PropsAppBar';
+// import PropsAppBar from './PropsAppBar';
 
 
 const styles = {
@@ -60,12 +60,15 @@ class App extends Component {
       user: null,
       message: '',
       lockedResult: '',
+      showProfileForm: false
     }
     this.liftTokenToState = this.liftTokenToState.bind(this)
     this.liftMessageToState = this.liftMessageToState.bind(this)
     this.checkForLocalToken = this.checkForLocalToken.bind(this)
     this.logout = this.logout.bind(this)
     this.handleClick = this.handleClick.bind(this)
+    this.showProfileForm = this.showProfileForm.bind(this)
+    this.hideProfileForm = this.hideProfileForm.bind(this)
   }
 
   liftTokenToState({token, user, message}) {
@@ -75,6 +78,18 @@ class App extends Component {
   liftMessageToState({ message }) {
     console.log('[App.jsx]: lifting error to state', { message })
     this.setState({ message })
+  }
+  // function passed down to SignUp component to show the Profile form
+  showProfileForm() {
+    this.setState({
+      showProfileForm: true
+    })
+  }
+  // function passed down to ProfileForm component to hide the Profile form
+  hideProfileForm() {
+    this.setState({
+      showProfileForm: false
+    })
   }
 
   logout() {
@@ -149,21 +164,15 @@ class App extends Component {
     let user = this.state.user
     let content
     if (user) {
-
-      content = ( 
-          <BrowserRouter>
-          <PropsAppBar />
-               <Route 
-                path="/home"
-                render={ () => <HomePage user={ user } logout={ this.logout }/> }/>
-             
-              <Route 
-                path="/profile" exact
-                render={ () => <ProfilePage user={ user } /> } />
-              <Route
-                path="/profile/signup" 
-                render={ () => <ProfileForm user={ user } /> } />
+      if (!this.state.showProfileForm) {
+        content = ( 
+            <BrowserRouter>
+            {/* <PropsAppBar /> */}
+                <Route 
+                  path="/home"
+                  render={ () => <HomePage user={ user } logout={ this.logout }/> }/>
               
+<<<<<<< HEAD
               <Route 
                 path="/community" 
                 render={ () => <CommunityPage user={ user } /> } />
@@ -186,6 +195,36 @@ class App extends Component {
 
 
       )
+=======
+                <Route 
+                  path="/profile" exact
+                  render={ () => <ProfilePage user={ user } /> } />
+                <Route
+                  path="/profile/signup" 
+                  render={ () => <ProfileForm user={ user } /> } />
+                
+                <Route 
+                  path="/community" 
+                  render={ () => <CommunityPage user={ user } /> } />
+
+                <Route 
+                  path="/square" 
+                  component={ TownSquare } /> 
+
+                <Route 
+                  path="/setup" 
+                  component={ SetUpPage } />
+
+                <p><button onClick={ this.handleClick } >Test the protected route...</button></p>
+                <p>{ this.state.lockedResult }</p>
+            </BrowserRouter>
+        )
+      } else {
+        content = (
+          <ProfileForm user={ user } hideProfileForm={ this.hideProfileForm } />
+          )
+      }
+>>>>>>> b7a71b9c7e9c891201fd6a2499511ce07dd00b3e
     } else {
       content = (
         <div className="SplashPage">
@@ -196,7 +235,7 @@ class App extends Component {
             <PropsLogo />
             </div>
             <div className="SignupDiv">
-            <Signup styles={styles} liftToken={this.liftTokenToState} liftMessage={this.liftMessageToState} />
+            <Signup styles={styles} liftToken={this.liftTokenToState} liftMessage={this.liftMessageToState} showProfileForm={ this.showProfileForm } />
             <h3>{ this.state.message }</h3> 
             </div>
         </div>

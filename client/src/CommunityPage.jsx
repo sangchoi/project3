@@ -3,6 +3,8 @@ import './CommunityPage.css';
 import axios from 'axios';
 import DirectoryEntry from './DirectoryEntry';
 import GiveProps from './GiveProps';
+import PropsAppBar from './PropsAppBar';
+import './CommunityPage.css';
 
 class UserDirectory extends Component {
     constructor(props) {
@@ -53,7 +55,7 @@ class UserDirectory extends Component {
             return (
                 <li  key={ i }  >
                     <DirectoryEntry 
-                        user={ user } 
+                        user={ user }
                         goToProfile={ this.goToProfileFromDirectory } 
                         giveProps={ this.handleGivePropsBtn }/>
                 </li>
@@ -61,14 +63,22 @@ class UserDirectory extends Component {
         })
 
         return (
-            <div className="UserDirectory">
-                <h1>UserDirectory.jsx</h1>
+            
+            <div className="CommunityPageDiv">
+                <div className="CommunityPageNavDiv">
+                <PropsAppBar />
+                </div>
+            
+                <div className="UserDirectory">
+                <h1 className="CommunityPageText">UserDirectory.jsx</h1>
                 <ul>
                     {/* insert user list into page */}
                     { userList }
                 </ul>
                 <GiveProps show={ this.state.givingProps } done={ this.doneGivingProps } updateFormValue={ this.updateForm } sender={ this.props.user } recipient={ this.state.propsRecipient}/>
             </div>
+            </div>
+           
         )
     }
 }
