@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
 })
 
 
-// GET /users/:id - Get one user
+// GET /user/:id - Get one user
 router.get('/:id', (req, res) => {
     User.findById(req.params.id).populate('profile').populate('department').exec( (err, user) => {
         if(!err) {
@@ -28,7 +28,20 @@ router.get('/:id', (req, res) => {
         }
     })
 })
-// GET /users/:id/props -- get one user's props
+
+// GET /user/:id/profile
+router.get('/:id/profile', (req, res) => {
+    User.findById(req.params.id).populate('propfile').exec( (err, user) => {
+        if (!err) {
+            res.json({type: 'success', message: 'user profile found', data: user})
+        }
+        else {
+            res.status({ type: 'error', message: 'error retrieving user profile', data: err })
+        }
+    })
+})
+
+// GET /user/:id/props -- get one user's props
 router.get('/:id/props', (req, res) => {
     console.log('GET /users/:id/props', req.originalUrl)
     Props.find({ $or: [{ from: req.params.id }, { to: req.params.id }] })
