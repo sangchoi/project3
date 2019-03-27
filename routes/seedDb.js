@@ -103,7 +103,7 @@ router.post('/', (req, res) => {
     var userModels = USERS.map(userName => {
         let user = new User({
             name: userName,
-            email: userName + '@ga.co',
+            email: userName.toLowerCase() + '@ga.co',
             password: 'password()',
         })
         console.log('user is done', user)
