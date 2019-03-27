@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './SetUpPage.css';
+import axios from 'axios';
 
 class SetUpPage extends Component {
     constructor(props) {
@@ -13,12 +14,10 @@ class SetUpPage extends Component {
         }
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.getDeps = this.getDeps.bind(this);
     }
-    componentDidMount() {
-        // get all departments
 
-        // get all people
-    }
+
 
     handleInputChange(e) {
         console.log('handleInputChange()')
@@ -36,9 +35,11 @@ class SetUpPage extends Component {
         switch(e.target.name) {
             case 'addDep':
                 this.addDep();
+                this.getDeps()
                 break;
             case 'addUser':
                 this.addUser();
+                this.getUsers();
                 break;
             default:
                 console.log('there was an error');
@@ -48,12 +49,53 @@ class SetUpPage extends Component {
     addDep() {
         // axios to make a department
         console.log(this.state.depName)
+        axios.post('/api/deps', { name: this.state.depName, members: [] })
     }
     addUser() {
         // axios to make a user
         console.log(this.state.userName, this.state.employeeID)
+
+    }
+    getDeps() {
+        axios.get('/api/deps')
+        .then(res => {
+            this.setState({
+                deps: res.data.data
+            })
+        })
+    }
+    getUsers() {
+        axios.get('/api/user')
+        .then(res => {
+            console.log('getusers res', res)
+            this.setState({
+                users: res.data
+            })
+        })
+    }
+    componentDidMount() {
+        // get all departments
+        this.getDeps()
+
+        // get all people
+        this.getUsers()
     }
     render() {
+        // make deps elements
+        let deps = this.state.deps.map((dep, i) => {
+            return (
+                <div className="single-dep" key={ i }>
+                    <span>{ dep.name }</span>
+                </div>
+            )
+        })
+        let users = this.state.users.map((user, i) => {
+            return (
+                <div className="single-user">
+                    <span>{ user.name }</span>
+                </div>
+            )
+        })
         return (
             <div className="SetUpPage">
                 <h1>Set up your Town</h1>
@@ -76,10 +118,7 @@ class SetUpPage extends Component {
                     <div className="RightTeams col2">
                         added teams should show up here
                         <ul>
-                            <li>DevOps</li>
-                            <li>Sales</li>
-                            <li>IT</li>
-                            <li>Marketing</li>
+                            {deps}
                         </ul>
                     </div>
                 </div>
@@ -96,8 +135,7 @@ class SetUpPage extends Component {
                     </div>
                     <div className="RightPeople col2">
                         <ul>
-                            <li>I'm a person you made</li>
-                            <li>Me too!</li>
+                            { users }
                         </ul>
                     </div>
                 </div>

@@ -1,7 +1,37 @@
 // PROFILE routes
 const router = require('express').Router();
 const Profile = require('../models/profile');
-const User = require('../models/user')
+const User = require('../models/user');
+const mongoose = require('mongoose');
+
+router.post('/', (req, res) => {
+    // make a new profile, return 201 and no data
+    console.log( 'POST api/profile/', req.originalUrl)
+    // make new profile
+    Profile.create({
+        photo: req.body.photo,
+        interests: req.body.interests,
+        groups: req.body.groups,
+        user: mongoose.Types.ObjectId(req.body.userID),
+    }, (err, profile) => {
+        console.log('return from Profile.create', err, profile)
+        if (!err) {
+            // add profile ref and department ref to user
+            User.findByIdAndUpdate(req.body.userID, {
+                profile: profile._id,
+                department: req.body.dep
+            }, (err, user) => {
+                if (!err) {
+                    res.json({type: 'success', message: 'successfully created user profile', data: { user, profile }})
+                } else {
+                    res.status(500).json({type: 'error', message: 'there was an error adding profile to your user', data: err})
+                }
+            })
+        } else {
+            res.status(500).json({type: 'error', message: 'there was an error during profile creation', data: err})
+        }
+    })
+})
 
 router.route('/:id/profile')
     .get((req, res) => {
@@ -18,31 +48,6 @@ router.route('/:id/profile')
             }
         }).catch(err => {
             console.log(err)
-        })
-    })
-    .post((req, res) => {
-        // make a new profile, return 201 and no data
-        console.log( 'POST /user/:id/profile', req.originalUrl)
-        Profile.create({
-            photo: req.body.photo,
-            interests: req.body.interests,
-            group: req.body.group,
-            user: req.body.user,
-        }, (err, profile) => {
-            console.log('return from Profile.create', err, profile)
-            if (!err) {
-                User.findByIdAndUpdate(req.params.id, {
-                    profile: profile._id
-                }, (err, user) => {
-                    if (!err) {
-                        res.json({type: 'success', message: 'successfully created user profile', data: { user, profile }})
-                    } else {
-                        res.status(500).json({type: 'error', message: 'there was an error adding profile to your user', data: err})
-                    }
-                })
-            } else {
-                res.status(500).json({type: 'error', message: 'there was an error during profile creation', data: err})
-            }
         })
     })
     .put((req, res) => {

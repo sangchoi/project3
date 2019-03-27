@@ -14,32 +14,42 @@
 
 .HomePageNavDiv {
     grid-area: homepagenav;
-    border: 1px red solid;
+    /* border: 1px red solid; */
     
 }
 
 .homebox-left {
     grid-area: propsfeed;
-    border: 1px red solid;
+    border: 1px rgb(125, 234, 216) solid;
+    border-radius: 50px;
+    margin: 10px;
+    
 }
 
 .profile-short {
     grid-area: profileshort;
-    border: 1px red solid;
-    display: flex;
-    flex-direction: row;
+    border: 1px rgb(200, 149, 190) solid;
+    /* display: flex;
+    flex-direction: row; */
+    border-radius: 50px;
+    margin: 10px;
+    
 }
 
 .props-short {
     grid-area: propsshort;
-    border: 1px red solid;
+    border: 1px rgb(255, 218, 0) solid;
+    border-radius: 50px;
+    margin: 10px;
+    
+    
 }
 
 
 /* PropsAppBar.jsx ------------------------------------------------------------------------- */
 
 .NavButton {
-    margin: 5px 20px 0px;
+    margin: 10px 20px 0px 10px;
     width: 110px;
     height: 40px;
     border-radius: 12px;
@@ -51,6 +61,23 @@
    
 }
 
+.NavButton:hover {
+    border-color: rgb(61, 107, 211);
+    background-color: rgb(61, 107, 211);
+}
+
+.NavButton1 {
+    margin: 10px 20px 0px 620px;
+}
+
+.GeneralAssemblyLogo {
+    display: inline-block;
+    margin: 5px 0 0 10px;
+    padding: 0;
+    width: 8%;
+    height: 3%;
+    /* border: 1px red solid; */
+  }
 
 /* PropsFeed.jsx ------------------------------------------------------------------------- */
 
@@ -63,30 +90,34 @@
 
 /* UserProfile.jsx ------------------------------------------------------------------------- */
 
-/* .profile-short > div {
+/*.profile-short > div {
 
-}
+}*/
 
 .ProfilePicBox {
-    
-    margin: 10px 10px 40px 20px;
+    display: inline-block;
+    margin: 10px 10px 40px 30px;
     padding: 30px;
     text-align: center;
-    border: 1px blue solid;
+    /* border: 1px blue solid; */
 }
 
 .ProfileDetailsBox {
-   
-    margin: 10px 10px 0 0;
-    border: 1px blue solid;
+    display: inline-block;
+    vertical-align: top;
+    margin: 80px 10px 0 0;
+    /* border: 1px blue solid; */
     padding: 10px 10px 10px 10px;
-} */
+}
 
 
 /* MyPropsShort.jsx ------------------------------------------------------------------------- */
 
 
-
+.MyPropsTextBox {
+    margin: 10px 10px 40px 30px;
+    padding: 30px;
+}
 
 
 
