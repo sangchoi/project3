@@ -78,7 +78,7 @@
 }
 
 .NavButton:hover {
-    border-color: rgb(34, 34, 34);
+    border-color: rgba(255, 255, 255, 1);
     background-color: rgb(34, 34, 34);
 }
 

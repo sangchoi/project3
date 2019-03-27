@@ -8,6 +8,7 @@ const RateLimit = require('express-rate-limit');
 const app = express();
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
+app.use(express.static(__dirname + "/client/build"))
 
 const loginLimiter = new RateLimit({
     windowMs: 5 * 60 * 1000, // 5 minutes
@@ -23,7 +24,11 @@ const signupLimiter = new RateLimit({
     message: JSON.stringify({type: 'error', message: 'Account creation maximum exceeded!' })
 })
 
-mongoose.connect('mongodb://localhost/' + process.env.PROPS_DB, {useNewUrlParser: true});
+// For Dev
+// mongoose.connect('mongodb://localhost/' + process.env.PROPS_DB, {useNewUrlParser: true});
+// For Production
+mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true});
+
 const db = mongoose.connection;
 db.on('open', () => {
     console.log(`Connected to Mongo on ${db.host}: ${db.port}`)
@@ -47,6 +52,10 @@ app.use('/api/deps', require('./routes/dep'));
 app.use('/api/profile', require('./routes/profile'));
 app.use('/api/chat', require('./routes/chat'));
 app.use('/api/seed', require('./routes/seedDb.js'))
+
+app.get('*', function(req, res) {
+    res.sendFile(__dirname + '/client/build/index.html')
+});
 
 app.listen(process.env.EXPRESS_PORT, () => {
     console.log(`You're listening to the sweet sounds of ${process.env.EXPRESS_PORT} PROPS in the morning...`)
