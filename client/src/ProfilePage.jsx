@@ -11,10 +11,10 @@ const Profile = props => {
                 <PropsAppBar />
             </div>
             <section className="ProfilePageUserProfile">
-                <UserProfile />
+                <UserProfile user={ props.user }/>
             </section>
             <section className="ProfilePageProfileLong">
-                <ProfileLong />
+                <ProfileLong user={ props.user }/>
             </section>
         </div>
     )

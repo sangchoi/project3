@@ -15,18 +15,11 @@ import PropsLogo from './PropsLogo';
 // SIGNUP PROFILE FORM
 import ProfileForm from './ProfileForm';
 
-// HOMEPAGE
-import ProfilePage from './UserProfile';
-import MyPropsShort from './MyPropsShort';
-import PropsFeed from './PropsFeed';
-
-// GIVE PROPS FORM
-
 // HOME PAGE
 import HomePage from './HomePage';
 
 // PROFILE PAGE
-// import ProfilePage from './ProfilePage';
+import ProfilePage from './ProfilePage';
 
 // COMMUNITY
 import CommunityPage from './CommunityPage';
