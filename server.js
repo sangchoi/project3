@@ -45,6 +45,7 @@ app.use('/api/user', require('./routes/user'));
 app.use('/api/props', require('./routes/props'));
 app.use('/api/deps', require('./routes/dep'));
 app.use('/api/profile', require('./routes/profile'));
+app.use('/api/chat', require('./routes/chat'));
 app.use('/api/seed', require('./routes/seedDb.js'))
 
 app.listen(process.env.EXPRESS_PORT, () => {

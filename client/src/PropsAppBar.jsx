@@ -18,6 +18,9 @@ const PropsAppBar = props => {
             <Link to='/setup'>
                 <button className="NavButton">Setup</button>
             </Link>
+            <Link to='/chat'>
+                <button>Chat</button>
+            </Link>
             <Link to='/logout'>
                 <button className="NavButton">Logout</button>
             </Link>

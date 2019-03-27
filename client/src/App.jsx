@@ -27,6 +27,9 @@ import CommunityPage from './CommunityPage';
 // TOWN SQUARE
 import TownSquare from './TownSquare';
 
+// CHAT PAGE
+import Chat from './Chat';
+
 // SET-UP PAGE
 import SetUpPage from './SetUpPage';
 
@@ -157,11 +160,10 @@ class App extends Component {
       if (!this.state.showProfileForm) {
         content = ( 
             <BrowserRouter>
-            {/* <PropsAppBar /> */}
                 <Route 
                   path="/home"
                   render={ () => <HomePage user={ user } logout={ this.logout }/> }/>
-              
+
                 <Route 
                   path="/profile" exact
                   render={ () => <ProfilePage user={ user } /> } />
@@ -180,6 +182,10 @@ class App extends Component {
                 <Route 
                   path="/setup" 
                   component={ SetUpPage } />
+
+                <Route
+                  path="/chat"
+                  render={ () => <Chat user={ user} /> } />
 
                 <p><button onClick={ this.handleClick } >Test the protected route...</button></p>
                 <p>{ this.state.lockedResult }</p>
