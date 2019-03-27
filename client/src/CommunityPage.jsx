@@ -63,11 +63,13 @@ class UserDirectory extends Component {
         })
 
         return (
-            <React.Fragment>
-            <div className="CommunityPageNavDiv">
+            
+            <div className="CommunityPageDiv">
+                <div className="CommunityPageNavDiv">
                 <PropsAppBar />
                 </div>
-            <div className="UserDirectory">
+            
+                <div className="UserDirectory">
                 <h1 className="CommunityPageText">UserDirectory.jsx</h1>
                 <ul>
                     {/* insert user list into page */}
@@ -75,7 +77,7 @@ class UserDirectory extends Component {
                 </ul>
                 <GiveProps show={ this.state.givingProps } done={ this.doneGivingProps } updateFormValue={ this.updateForm } sender={ this.props.user } recipient={ this.state.propsRecipient}/>
             </div>
-            </React.Fragment>
+            </div>
            
         )
     }

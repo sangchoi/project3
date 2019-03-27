@@ -1,14 +1,178 @@
-/* These styles are just for development -- should change for production. */
-.SetUpPage div {
-    border: 1px solid black
+.SetUpPageDiv {
+    border: 1px red solid;
+    font-family: 'CircularStd-Medium';
+    min-height: 100vh;
+    margin: 0;
+    display: grid;
+    grid-template-columns: .5fr .5fr;
+    grid-template-rows: .1fr .1fr .4fr .4fr;
+    grid-template-areas: "setuppagenavdiv setuppagenavdiv"
+                         "setupyourtown setupyourtown"
+                         "leftteams rightteams"
+                         "leftpeople rightpeople";
+                         
+  }
+
+/* SetUpPage.jsx ------------------------------------------------------------------------- */
+
+.SetUpPageNavDiv {
+    /* border: 1px red solid; */
+    grid-area: setuppagenavdiv;
 }
 
-.SetUpPage {
-    border: 1px solid black;
-    margin: 0 auto;
-    max-width: 90%;
-    position: relative;
+.SetUpYourTown {
+    /* border: 1px red solid; */
+    grid-area: setupyourtown;
+    font-family: 'CircularStd-Bold';
+    font-size: 3em;
+    text-align: center;
 }
+
+/* TOP LEFT SQUARE ------------------------------------------------------------------------- */
+
+.LeftTeams {
+    border: 1px solid rgb(1, 121, 144);
+    border-radius: 50px;
+    margin: 0 10px 10px 20px;
+    grid-area: leftteams;
+    padding: 0 10px 30px 30px;
+}
+
+.AddTeamsText {
+    font-family: 'CircularStd-Bold';
+    font-size: 2em;
+}
+
+.AddTeamsInput {
+    margin: 0 5px 0 5px;
+    padding: 0 1px 0 1px;
+    border: none;
+    border-bottom: 1px solid rgb(1, 121, 144);
+    width: 300px;
+    height: 50px;
+    font-size: 1em;
+    color: rgb(228, 26, 35);
+}
+
+.AddTeamsInput:Focus {
+    outline: none;
+}
+
+.AddTeamsButton {
+    margin: 0 20px 0 5px;
+    width: 200px;
+    height: 40px;
+    border-radius: 12px;
+    border-color: rgb(228, 26, 35);
+    background-color:  rgb(228, 26, 35);
+    font-family: 'CircularStd-Bold';
+    font-size: 1em;
+    color: white;
+}
+
+/* TOP RIGHT SQUARE ------------------------------------------------------------------------- */
+
+.RightTeams {
+    border: 1px solid rgb(1, 121, 144);
+    border-radius: 50px;
+    margin: 0 10px 10px 20px;
+    grid-area: rightteams;
+    padding: 0 10px 30px 30px;
+}
+
+.AddedTeamsText {
+    font-family: 'CircularStd-Bold';
+    font-size: 2em;
+}
+
+/* BOTTOM LEFT SQUARE ------------------------------------------------------------------------- */
+
+.LeftPeople {
+    border: 1px solid rgb(1, 121, 144);
+    border-radius: 50px;
+    margin: 0 10px 10px 20px;
+    grid-area: leftpeople;
+    padding: 0 10px 30px 30px;
+}
+
+.AddPeopleText {
+    font-family: 'CircularStd-Bold';
+    font-size: 2em;
+}
+
+.AddNameInput {
+    margin: 0 5px 0 5px;
+    padding: 0 1px 0 1px;
+    border: none;
+    border-bottom: 1px solid rgb(1, 121, 144);
+    width: 200px;
+    height: 50px;
+    font-size: 1em;
+    color: rgb(228, 26, 35);
+}
+
+.AddNameInput:Focus {
+    outline: none;
+}
+
+.AddIdInput {
+    margin: 0 5px 0 5px;
+    padding: 0 1px 0 1px;
+    border: none;
+    border-bottom: 1px solid rgb(1, 121, 144);
+    width: 200px;
+    height: 50px;
+    font-size: 1em;
+    color: rgb(228, 26, 35);
+}
+
+.AddIdInput:Focus {
+    outline: none;
+}
+
+.Hint {
+    font-size: .8em;
+    color: rgb(132, 10, 77);
+}
+
+.AddNameButton {
+    margin: 0 20px 0 5px;
+    width: 200px;
+    height: 40px;
+    border-radius: 12px;
+    border-color: rgb(228, 26, 35);
+    background-color:  rgb(228, 26, 35);
+    font-family: 'CircularStd-Bold';
+    font-size: 1em;
+    color: white;
+}
+
+/* BOTTOM RIGHT SQUARE ------------------------------------------------------------------------- */
+
+.RightPeople {
+    border: 1px solid rgb(1, 121, 144);
+    border-radius: 50px;
+    margin: 0 10px 10px 20px;
+    grid-area: rightpeople;
+    padding: 0 10px 30px 30px;
+}
+
+.AddedPeopleText {
+    font-family: 'CircularStd-Bold';
+    font-size: 2em;
+}
+
+
+
+
+
+
+
+/* These styles are just for development -- should change for production. */
+/* .SetUpPage div {
+    border: 1px solid red;
+}
+
 .flex {
     display: flex;
 }
@@ -36,4 +200,4 @@
     width: 100%;
     padding: 1em;
     text-align: left;
-}
+} */
