@@ -66,13 +66,17 @@
     background-color: rgb(61, 107, 211);
 }
 
+.NavButton:focus {
+    outline: none;
+}
+
 .NavButton1 {
     margin: 10px 20px 0px 620px;
 }
 
-.GeneralAssemblyLogo {
+.GaLogo1 {
     display: inline-block;
-    margin: 5px 0 0 10px;
+    margin: 0 0 0 10px;
     padding: 0;
     width: 8%;
     height: 3%;

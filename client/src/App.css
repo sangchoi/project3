@@ -84,11 +84,11 @@
   font-family: 'CircularStd-Black';
 }
 
-.GeneralAssemblyLogo {
+.GaLogo {
   display: inline-block;
-  margin: 10px 0 0 200px;
-  width: 35%;
-  height: 20%;
+  margin: 5px 0 0 150px;
+  width: 40%;
+  height: 15%;
   /* border: 1px red solid; */
 }
 
