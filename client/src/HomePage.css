@@ -2,6 +2,8 @@
     font-family: 'CircularStd-Medium';
     min-height: 100vh;
     margin: 0;
+    background-color: black;
+    color: white;
     display: grid;
     grid-template-columns: .5fr .5fr;
     grid-template-rows: .1fr .45fr .45fr;
@@ -15,14 +17,20 @@
 .HomePageNavDiv {
     grid-area: homepagenav;
     /* border: 1px red solid; */
+    background-color: black;
     
 }
 
 .homebox-left {
     grid-area: propsfeed;
-    border: 1px rgb(125, 234, 216) solid;
+    border: 2px rgb(125, 234, 216) solid;
     border-radius: 50px;
     margin: 10px;
+    width: 650px;
+    background-color: rgba(125, 234, 216, .2);
+    color: rgb(125, 234, 216);
+    box-shadow: 30px -20px rgba(125, 234, 216, .5);
+    text-shadow: -5.5px -4px rgba(125, 234, 216, .5);
     
 }
 
@@ -33,6 +41,10 @@
     flex-direction: row; */
     border-radius: 50px;
     margin: 10px;
+    background-color: rgba(200, 149, 190, .2);
+    color: rgb(200, 149, 190);
+    box-shadow: 30px -20px rgba(200, 149, 190, .5);
+    text-shadow: -5.5px -4px rgba(200, 149, 190, .5);
     
 }
 
@@ -53,8 +65,8 @@
     width: 110px;
     height: 40px;
     border-radius: 12px;
-    border-color: rgb(228, 26, 35);
-    background-color:  rgb(228, 26, 35);
+    border-color: black;
+    background-color:  black;
     font-family: 'CircularStd-Bold';
     font-size: 1em;
     color: white;
@@ -71,7 +83,7 @@
 }
 
 .NavButton1 {
-    margin: 10px 20px 0px 620px;
+    margin: 10px 20px 0px 480px;
 }
 
 .GaLogo1 {
@@ -79,8 +91,9 @@
     margin: 0 0 0 10px;
     padding: 0;
     width: 8%;
-    height: 3%;
+    height: 5%;
     /* border: 1px red solid; */
+    
   }
 
 /* PropsFeed.jsx ------------------------------------------------------------------------- */
