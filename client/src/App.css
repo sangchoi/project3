@@ -176,23 +176,3 @@
 }
 
 
-/* NAVIGATION ------------------------------------------------------------------------- */
-
-/* This is for the nav for dev purposes only */
-.PropsAppBar > * {
-  padding: .5em 1em;
-  font-size: 20px;
-  text-decoration: none;
-  border: 1px rgb(228, 26, 35) solid;
-
-}
-.PropsAppBar button {
-  background: none;
-  box-shadow: none;
-  border: 1px solid black;
-  border-radius: 3px;
-  padding: .5em 1em;
-  font-size: 18px;
-  border: 1px rgb(228, 26, 35) solid;
-}
-

@@ -40,7 +40,7 @@ import SetUpPage from './SetUpPage';
 // MATERIAL-UI IMPORTS
 import { Typography, Grid, Paper} from '@material-ui/core';
 
-import PropsAppBar from './PropsAppBar';
+// import PropsAppBar from './PropsAppBar';
 
 
 const styles = {
@@ -149,7 +149,7 @@ class App extends Component {
 
       content = ( 
           <BrowserRouter>
-          <PropsAppBar />
+          {/* <PropsAppBar /> */}
                <Route 
                 path="/home"
                 render={ () => <HomePage user={ user } logout={ this.logout }/> }/>
@@ -173,8 +173,8 @@ class App extends Component {
                 path="/setup" 
                 component={ SetUpPage } />
 
-              <p><button onClick={ this.handleClick } >Test the protected route...</button></p>
-              <p>{ this.state.lockedResult }</p>
+              {/* <p><button onClick={ this.handleClick } >Test the protected route...</button></p> */}
+              {/* <p>{ this.state.lockedResult }</p> */}
           </BrowserRouter>
 
 

@@ -5,19 +5,19 @@ const PropsAppBar = props => {
     return (
         <div className="PropsAppBar" style={{display:'flex'}}>
             <Link to='/home'>
-                <button>Home</button>
+                <button className="NavButton">Home</button>
             </Link>
             <Link to='/profile'>
-                <button>Profile</button>
+                <button className="NavButton">Profile</button>
             </Link>
             <Link to='/community'>
-                <button>Community</button>
+                <button className="NavButton">Community</button>
             </Link>
             <Link to='/setup'>
-                <button>Setup</button>
+                <button className="NavButton">Setup</button>
             </Link>
             <Link to='/logout'>
-                <button>Logout</button>
+                <button className="NavButton">Logout</button>
             </Link>
         </div>
     )

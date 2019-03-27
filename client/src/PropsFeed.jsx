@@ -24,7 +24,7 @@ class PropsFeed extends Component {
         })
         return(
             <div>
-            <p>This is a list of all props:</p>
+            <p className="PropsFeedText">This is a list of all props:</p>
             <ul>
                 {myPropsList}
             </ul>
