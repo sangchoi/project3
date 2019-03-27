@@ -178,7 +178,7 @@ class App extends Component {
 
               <Route
                 path="/chat"
-                component={ Chat } />
+                render={ () => <Chat user={ user } /> } />
 
               <p><button onClick={ this.handleClick } >Test the protected route...</button></p>
               <p>{ this.state.lockedResult }</p>

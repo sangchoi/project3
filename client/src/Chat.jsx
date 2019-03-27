@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import CreateChat from './CreateChat';
 
 class Chat extends Component {
     constructor(props) {
@@ -18,12 +19,14 @@ class Chat extends Component {
     }
     render() {
         let chatFeed = this.state.messages.map(( message, index) => {
-            return <li key={index}>{message}</li>
+            return <li key={index}>{message.body}</li>
         })
+        console.log(chatFeed)
         return ( 
             <div>
                 <ul>
                     {chatFeed}
+                    <CreateChat user={this.props.user} />
                 </ul>
             </div>
         )
