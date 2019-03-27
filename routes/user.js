@@ -31,7 +31,7 @@ router.get('/:id', (req, res) => {
 
 // GET /user/:id/profile
 router.get('/:id/profile', (req, res) => {
-    User.findById(req.params.id).populate('propfile').exec( (err, user) => {
+    User.findById(req.params.id).populate('profile').exec( (err, user) => {
         if (!err) {
             res.json({type: 'success', message: 'user profile found', data: user})
         }
