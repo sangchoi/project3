@@ -94,8 +94,8 @@ class Chat extends Component {
         })
         return ( 
 
-            <>
-            <div className="ChatPage">
+            <div className="ChatBox">
+            <div className="ChatPageNavDiv">
             <PropsAppBar />
                 <div className='chat-feed'>
                         {chatFeed}
@@ -104,7 +104,7 @@ class Chat extends Component {
                         <CreateChat user={this.props.user} handleSubmit={this.handleSubmit} handleTextArea={this.handleTextArea} body={this.state.body} />
                 </div>
             </div>
-            </>
+            </div>
 
         )
     }
