@@ -5,7 +5,7 @@
     margin: 0;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: .1fr .9fr;
+    grid-template-rows: .1fr .1fr .8fr;
     grid-template-areas: "communitypagenavdiv"
                          "communitypagetext"
                          "userdirectory";
@@ -29,6 +29,7 @@
     margin: 0 0 0 30px;
     /* border: 1px red solid; */
     vertical-align: top;
+    
 }
 
 .CommunityPageText {
