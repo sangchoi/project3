@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import CreateChat from './CreateChat';
+import PropsAppBar from './PropsAppBar';
+import './Chat.css'
 
 class Chat extends Component {
     constructor(props) {
@@ -57,11 +59,18 @@ class Chat extends Component {
         })
         console.log(chatFeed)
         return ( 
-            <div>
+            <div className="ChatBox">
+            <div className="ChatPageNavDiv">
+                <PropsAppBar />
+            </div>
+            <div className="ChatFeedBox">
                 <ul>
                     {chatFeed}
+                    <br />
+                    <br />
                     <CreateChat user={this.props.user} handleSubmit={this.handleSubmit} handleTextArea={this.handleTextArea}  />
                 </ul>
+            </div>
             </div>
         )
     }

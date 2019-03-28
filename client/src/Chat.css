@@ -1,0 +1,59 @@
+.ChatBox {
+    border: 1px red solid;
+    height: 100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: "chatpagenavdiv"
+                        "chatfeedbox"
+}
+
+
+.ChatPageNavDiv {
+    background-color: black;
+    height: 60px;
+    
+}
+
+.ChatFeedBox {
+    border: 4px rgb(228, 26, 35) solid;
+    border-radius: 50px;
+    margin: 30px;
+    padding: 40px 40px 30px 40px;
+    min-height: 70vh;
+    vertical-align: bottom;
+    position: relative;
+}
+
+.chat-input {
+    position: absolute;
+    bottom: 20px;
+}
+
+.ChatHeader {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 10px 20px 0px 10px;
+    font-size: 2em;
+}
+
+.ChatForm {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.ChatTextBox {
+    border: 4px black solid;
+    vertical-align: middle;
+    width: 900px;
+}
+
+.ChatButton {
+    margin: 10px 20px 0px 20px;
+    width: 110px;
+    height: 40px;
+    border-radius: 12px;
+    border-color: rgb(228, 26, 35);
+    background-color:  rgb(228, 26, 35);
+    font-family: 'CircularStd-Bold';
+    font-size: 1em;
+    color: white;
+}

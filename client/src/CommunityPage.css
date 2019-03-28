@@ -7,6 +7,7 @@
     grid-template-columns: 1fr;
     grid-template-rows: .1fr .9fr;
     grid-template-areas: "communitypagenavdiv"
+                         "communitypagetext"
                          "userdirectory";
                          
   }
@@ -19,20 +20,21 @@
     /* border: 1px red solid; */
     background-color: black;
     height: 60px;
-    
+   
 }
 
 .UserDirectory {
     grid-area: userdirectory;
     max-width: 100%;
-    margin: 0 0 0 40px;
-    border: 1px red solid;
+    margin: 0 0 0 30px;
+    /* border: 1px red solid; */
     vertical-align: top;
 }
 
 .CommunityPageText {
+    grid-area: communitypagetext;
     font-size: 3em;
-    margin: 0 0 0 15px;
+    margin: 10px 0 10px 20px;
     /* border: 1px red solid; */
     vertical-align: top;
 }
@@ -66,8 +68,8 @@
 
 .directorypropsbutton {
     margin: 2px 50px 2px 0;
-    border-color: rgb(188, 165, 50);
-    background-color:  rgb(188, 165, 50);
+    border-color: rgb(228, 26, 35);
+    background-color:  rgb(228, 26, 35);
 }
 
 

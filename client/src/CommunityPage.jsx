@@ -68,9 +68,9 @@ class UserDirectory extends Component {
                 <div className="CommunityPageNavDiv">
                 <PropsAppBar />
                 </div>
-            
-                <div className="UserDirectory">
                 <h1 className="CommunityPageText">UserDirectory.jsx</h1>
+                <div className="UserDirectory">
+                
                 <ul>
                     {/* insert user list into page */}
                     { userList }
