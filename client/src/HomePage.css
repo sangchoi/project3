@@ -4,7 +4,7 @@
     margin: 0;
     display: grid;
     grid-template-columns: .5fr .5fr;
-    grid-template-rows: .1fr .45fr .45fr;
+    grid-template-rows: .1fr .25fr auto;
     grid-template-areas: "homepagenav homepagenav"
                          "propsfeed profileshort"
                          "propsfeed propsshort";
@@ -27,6 +27,9 @@
     width: 650px;
     color: black;
     vertical-align: top;
+    position: relative;
+    max-height: 650px;
+    overflow-y: scroll;
 }
 
 .profile-short {
@@ -44,7 +47,9 @@
     border-radius: 50px;
     margin: 40px 20px;
     width: 650px;
-    vertical-align: top;  
+    vertical-align: top; 
+    max-height: 270px;
+    overflow-y: scroll; 
 }
 
 
@@ -93,13 +98,12 @@
     font-size: 3em;
     margin: 30px 0 0 0;
     text-align: center;
-    position: relative;
+    
 }
 
 .PropsFeedButtonDiv {
     position: absolute;
-    bottom:   0;
-    margin-bottom: 0;
+    bottom:   20px;
 }
 
 .PropsFeedButton1, .PropsFeedButton2 {

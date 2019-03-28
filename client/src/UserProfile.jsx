@@ -5,7 +5,7 @@ export default function UserProfile({ user, logout }) {
         <div className="Profile">     
             {/* <button onClick={ logout }>Log Out!</button> */}
             <div className="ProfilePicBox">
-            <h2 className="ProfileNameText">{ user.name }'S PROFILE</h2>
+            <h2 className="ProfileNameText">{ user.name }'s Profile</h2>
             <img src="https://via.placeholder.com/150" alt="user avatar large"/>
             </div>
             <div className="ProfileDetailsBox">

@@ -1,11 +1,11 @@
 .SetUpPageDiv {
-    border: 1px red solid;
+    /* border: 1px red solid; */
     font-family: 'CircularStd-Medium';
     min-height: 100vh;
     margin: 0;
     display: grid;
     grid-template-columns: .5fr .5fr;
-    grid-template-rows: .1fr .1fr .4fr .4fr;
+    grid-template-rows: .1fr .1fr .4fr .4;
     grid-template-areas: "setuppagenavdiv setuppagenavdiv"
                          "setupyourtown setupyourtown"
                          "leftteams rightteams"
@@ -18,6 +18,8 @@
 .SetUpPageNavDiv {
     /* border: 1px red solid; */
     grid-area: setuppagenavdiv;
+    background-color: black;
+    height: 60px;
 }
 
 .SetUpYourTown {
@@ -26,16 +28,18 @@
     font-family: 'CircularStd-Bold';
     font-size: 3em;
     text-align: center;
+    margin: 10px 0 10px 0;
 }
 
 /* TOP LEFT SQUARE ------------------------------------------------------------------------- */
 
 .LeftTeams {
-    border: 1px solid rgb(1, 121, 144);
+    border: 2px solid rgb(1, 121, 144);
     border-radius: 50px;
     margin: 0 10px 10px 20px;
     grid-area: leftteams;
     padding: 0 10px 30px 30px;
+    max-height: 250px;
 }
 
 .AddTeamsText {
@@ -73,11 +77,13 @@
 /* TOP RIGHT SQUARE ------------------------------------------------------------------------- */
 
 .RightTeams {
-    border: 1px solid rgb(1, 121, 144);
+    border: 2px solid rgb(1, 121, 144);
     border-radius: 50px;
     margin: 0 10px 10px 20px;
     grid-area: rightteams;
     padding: 0 10px 30px 30px;
+    max-height: 250px;
+    overflow-y: scroll;
 }
 
 .AddedTeamsText {
@@ -88,11 +94,12 @@
 /* BOTTOM LEFT SQUARE ------------------------------------------------------------------------- */
 
 .LeftPeople {
-    border: 1px solid rgb(1, 121, 144);
+    border: 2px solid rgb(1, 121, 144);
     border-radius: 50px;
     margin: 0 10px 10px 20px;
     grid-area: leftpeople;
     padding: 0 10px 30px 30px;
+    max-height: 300px;
 }
 
 .AddPeopleText {
@@ -150,11 +157,13 @@
 /* BOTTOM RIGHT SQUARE ------------------------------------------------------------------------- */
 
 .RightPeople {
-    border: 1px solid rgb(1, 121, 144);
+    border: 2px solid rgb(1, 121, 144);
     border-radius: 50px;
     margin: 0 10px 10px 20px;
     grid-area: rightpeople;
     padding: 0 10px 30px 30px;
+    max-height: 300px;
+    overflow-y: scroll;
 }
 
 .AddedPeopleText {
