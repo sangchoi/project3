@@ -1,15 +1,19 @@
 import React from 'react';
 
+
 const CreateChat = (props) => {
     return (
-        <div>
-            <h4>Chat</h4>
-            <form onSubmit={props.handleSubmit}>
-                <textarea name='chat-body' value={props.body} onChange={ props.handleTextArea } />
-                <input type='submit' value='chat' />
-            </form>
-        </div>
-    )
+            <div className='chat-input'>
+                <h4 className="ChatHeader">CHAT</h4>
+                <form className="ChatForm" onSubmit={this.props.handleSubmit}>
+                    <textarea className="ChatTextBox" name='chat-body' placeholder='text...' onChange={ this.props.handleTextArea } />
+                    
+                    <input className="ChatButton" type='submit' value='SUBMIT' />
+                </form>
+            </div>
+        )
+    }
+
 }
 
 export default CreateChat;

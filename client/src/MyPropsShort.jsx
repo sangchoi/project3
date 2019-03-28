@@ -27,7 +27,7 @@ class MyPropsShort extends Component {
         return ( 
             <div className="MyProps">
                 <div className="MyPropsTextBox">
-                <h2 className="MyPropsText">MY PROPS</h2>
+                <h2 className="MyPropsText">My Props</h2>
                 { MyPropsList }
                 </div>
             </div>
