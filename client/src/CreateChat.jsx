@@ -1,15 +1,8 @@
-import React, { Component } from 'react';
-import axios from 'axios';
+import React from 'react';
 
-class CreateChat extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            
-        }
-    }
-    render() {
-        return(
+
+const CreateChat = (props) => {
+    return (
             <div className='chat-input'>
                 <h4 className="ChatHeader">CHAT</h4>
                 <form className="ChatForm" onSubmit={this.props.handleSubmit}>
@@ -20,6 +13,7 @@ class CreateChat extends Component {
             </div>
         )
     }
+
 }
 
 export default CreateChat;
