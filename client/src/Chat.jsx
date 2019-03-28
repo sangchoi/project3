@@ -102,21 +102,7 @@ class Chat extends Component {
                     <CreateChat user={this.props.user} handleSubmit={this.handleSubmit} handleTextArea={this.handleTextArea} body={this.state.body} />
             </div>
             </>
-<!-- =======
-            <div className="ChatBox">
-            <div className="ChatPageNavDiv">
-                <PropsAppBar />
-            </div>
-            <div className="ChatFeedBox">
-                <ul>
-                    {chatFeed}
-                    <br />
-                    <br />
-                    <CreateChat user={this.props.user} handleSubmit={this.handleSubmit} handleTextArea={this.handleTextArea}  />
-                </ul>
-            </div>
-            </div>
--->
+
         )
     }
 }

@@ -5,8 +5,8 @@ const CreateChat = (props) => {
     return (
             <div className='chat-input'>
                 <h4 className="ChatHeader">CHAT</h4>
-                <form className="ChatForm" onSubmit={this.props.handleSubmit}>
-                    <textarea className="ChatTextBox" name='chat-body' placeholder='text...' onChange={ this.props.handleTextArea } />
+                <form className="ChatForm" onSubmit={props.handleSubmit}>
+                    <textarea className="ChatTextBox" name='chat-body' placeholder='text...' onChange={ props.handleTextArea } />
                     
                     <input className="ChatButton" type='submit' value='SUBMIT' />
                 </form>
@@ -14,6 +14,6 @@ const CreateChat = (props) => {
         )
     }
 
-}
+
 
 export default CreateChat;
