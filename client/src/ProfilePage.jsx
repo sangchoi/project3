@@ -2,23 +2,28 @@ import React from 'react';
 import ProfileLong from './ProfileLong';
 import UserProfile from './UserProfile';
 import PropsAppBar from './PropsAppBar';
+import MyPropsShort from './MyPropsShort';
 import './ProfilePage.css';
 
 const Profile = props => {
     return (
         <div className='profile-box'>
-        <div className="ProfilePageNavDiv">
-                <PropsAppBar />
+
+            <div className="ProfilePageNavDiv">
+                <PropsAppBar logout={ props.logout } />
             </div>
-            {/* <div className="ProfilePageBox"> */}
+
             <section className="ProfilePageUserProfile">
                 <UserProfile user={ props.user }/>
             </section>
+
             <section className="ProfilePageProfileLong">
                 <ProfileLong user={ props.user }/>
             </section>
+            <section className="ProfilePageMyPropsShort">
+                <MyPropsShort user={ props.user } />
+            </section>  
         </div>
-        // </div>
     )
 }
 

@@ -46,8 +46,6 @@ router.route('/:id/profile')
                 console.log('error', err)
                 res.status(500).json({ type: 'error', message: err.message })
             }
-        }).catch(err => {
-            console.log(err)
         })
     })
     .put((req, res) => {
@@ -58,9 +56,6 @@ router.route('/:id/profile')
             } else {
                 res.status(500).json( { type: 'error', message: err.message } )
             }
-        })
-        .catch(err => {
-            console.log(err)
         })
     })
 

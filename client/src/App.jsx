@@ -3,7 +3,7 @@ import './App.css';
 
 // npm packages
 import axios from 'axios';
-import { BrowserRouter, Route, Link } from 'react-router-dom'
+import { BrowserRouter, Route, Redirect } from 'react-router-dom'
 
 
 // REACT COMPONENTS
@@ -160,32 +160,33 @@ class App extends Component {
       if (!this.state.showProfileForm) {
         content = ( 
             <BrowserRouter>
+                <Route exact path='/' render= { () => <Redirect to="/home" /> }/> 
                 <Route 
                   path="/home"
                   render={ () => <HomePage user={ user } logout={ this.logout }/> }/>
 
                 <Route 
                   path="/profile" exact
-                  render={ () => <ProfilePage user={ user } /> } />
+                  render={ () => <ProfilePage user={ user } logout={ this.logout }/> } />
                 <Route
                   path="/profile/signup" 
                   render={ () => <ProfileForm user={ user } /> } />
                 
                 <Route 
                   path="/community" 
-                  render={ () => <CommunityPage user={ user } /> } />
+                  render={ () => <CommunityPage user={ user } logout={ this.logout }/> } />
 
                 <Route 
                   path="/square" 
-                  component={ TownSquare } /> 
+                  render={ () => <TownSquare logout={ this.logout } /> } /> 
 
                 <Route 
                   path="/setup" 
-                  component={ SetUpPage } />
+                  render={ () => <SetUpPage logout={ this.logout } /> } />
 
                 <Route
                   path="/chat"
-                  render={ () => <Chat user={ user} /> } />
+                  render={ () => <Chat user={ user } logout={ this.logout } /> } />
 
                 
             </BrowserRouter>

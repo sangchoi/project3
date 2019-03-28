@@ -10,7 +10,7 @@ const HomePage = props => {
         <div className="homebox">
        
             <div className="HomePageNavDiv">
-                <PropsAppBar />
+                <PropsAppBar logout={ props.logout }/>
             </div>
             <div className="homebox-left">
                 <PropsFeed />

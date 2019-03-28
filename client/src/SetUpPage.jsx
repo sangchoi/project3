@@ -101,7 +101,7 @@ class SetUpPage extends Component {
         return (
             <div className="SetUpPageDiv">
              <div className="SetUpPageNavDiv">
-                <PropsAppBar />
+                <PropsAppBar logout={ this.props.logout } />
                 </div>
                 {/* <div className="SetUpPage"> */}
                 <h1 className="SetUpYourTown">Set Up Your Town</h1>

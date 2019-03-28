@@ -21,8 +21,11 @@ const PropsAppBar = props => {
             <Link to='/chat'>
                 <button className="NavButton">Chat</button>
             </Link>
-            <Link to='/logout'>
-                <button className="NavButton">Logout</button>
+            <Link to='/square'>
+                <button className="NavButton">Town Square</button>
+            </Link>
+            <Link to='/'>
+                <button className="NavButton" onClick={ props.logout }> Logout </button>
             </Link>
         </div>
     )

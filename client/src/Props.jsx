@@ -1,23 +1,38 @@
 import React from 'react';
+import Icon from '@material-ui/core/Icon';
+import Chip from '@material-ui/core/Chip';
 
 const Props = ({ singleProps, user }) => {
-    console.log('user ID', user._id, 'singlePropsFrom', singleProps.from )
-    console.log('in the props component', singleProps)
-    if ( user._id === singleProps.from._id ) {
+    if (!user) {
         return (
-            <div className="singleProps incoming">
-                <i>out_arrow_icon</i>
-                <span>Body: { singleProps.body }</span>
-                <span>From: { singleProps.from.name }</span>
+            <div className="singleProps global">
+                <img src="http://via.placeholder.com/50" alt="avatar"/>
+                <span className="body" > { singleProps.body } </span>
             </div>
         )
-    }
-    if ( user._id === singleProps.to._id ) {
+    } else if ( user._id === singleProps.from._id ) {
+        console.log(singleProps.to.profile)
         return (
             <div className="singleProps outgoing">
-                <i>in_arrow</i>
-                <span>Body: { singleProps.body }</span>
-                <span>To: { singleProps.to.name }</span>
+                
+                <span className="body">{ singleProps.body }</span>
+                <div className="recipient">
+                <Chip 
+                    icon={ <Icon className="icon">arrow_forward</Icon> } 
+                    label={ singleProps.to.name } />
+                </div>
+            </div>
+        )
+    } else if ( user._id === singleProps.to._id ) {
+        return (
+            <div className="singleProps incoming">
+                <div className="sender">
+                    <Chip 
+                        label={ singleProps.from.name } 
+                        icon={ <Icon className="icon">arrow_back</Icon> } />
+                </div>
+                <span className="body">{ singleProps.body }</span>
+                
             </div>
         )
     }
