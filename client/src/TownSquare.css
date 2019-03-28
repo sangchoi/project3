@@ -1,3 +1,64 @@
+.townsquare {
+    font-family: 'CircularStd-Medium';
+    /* text-align: center; */
+    min-height: 100vh;
+    margin: 0;
+    display: grid;
+    grid-template-columns: .5fr .5fr;
+    grid-template-rows: .1fr auto;
+    grid-template-areas: "townsquarenav townsquarenav"
+                        "tspropsfeed tspiechart";
+  }
+
+
+
+
+
 .TownSquareNav {
+    grid-area: townsquarenav;
     background-color: black;
+}
+
+.square {
+    grid-area: tspropsfeed;
+    border: 2px rgb(228, 26, 35) solid;
+    border-radius: 50px;
+    margin: 20px 20px;
+    width: 650px;
+    color: black;
+    vertical-align: top;
+    position: relative;
+    max-height: 650px;
+    overflow-y: scroll;
+    font-size: .9em;
+}
+
+.TownSquarePieChart {
+    grid-area: tspiechart;
+    border: 2px rgb(228, 26, 35) solid;
+    border-radius: 50px;
+    margin: 20px 20px;
+    width: 650px;
+    color: black;
+    vertical-align: top;
+    position: relative;
+    max-height: 650px;
+    overflow-y: scroll;
+    font-size: .9em;
+}
+
+.PieChartButton {
+    width: 300px;
+    height: 50px;
+    margin: 30px 0 30px 180px;
+    border-radius: 12px;
+    border-color: rgb(228, 26, 35);
+    background-color:  rgb(228, 26, 35);
+    font-family: 'CircularStd-Bold';
+    font-size: 1em;
+    color: white;
+}
+
+.ThePieChart {
+    margin: 30px 0 30px 180px;
 }
