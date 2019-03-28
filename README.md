@@ -38,3 +38,9 @@ Day 5 was a Monday, a very Monday, Monday.
 That morning we divided a number of tasks between us, with Sang working on attempting to bring Material UI into the project; FX looking into a variety of potential options for data visualization and Gavin focusing on further creation and gathering together of React components.
 As the afternoon came around, it became apparent that some refactoring would be required. Rather than focusing on integrating components through a central jsx file, we decided to look at each page as a parent component to the supplementary components which enabled them to function. This decision was made on the basis of both functionality and organization, two things we wanted to make sure were given more than adequate focus throughout our time working together.
 While we did indeed meet MVP requirements during the afternoon, we decided to take this step back in order to take two forward and continued working on refactoring for the remainder of the day and evening.
+## Day 6/7
+These were the hardcore days. Debugging, implementing trickier supplementary features and styling. We decided that Material UI wouldn't be much use given the limited time to learn the library and, after a brief flirt with React Materialize, decided Sang would style entirely in CSS.
+Both FX and Gavin endeavored to get more niche features implemented, namely FX with data visualization and Gavin with chat feature. By close of play Wednesday, aside from a few minor issues and updates, the site was ready to go live.
+
+## Wishlist and additions
+Styling - Transitions and animations would have been welcome additions 
