@@ -68,15 +68,16 @@ class UserDirectory extends Component {
                 <div className="CommunityPageNavDiv">
                 <PropsAppBar logout={ this.props.logout } />
                 </div>
-                <h1 className="CommunityPageText">UserDirectory.jsx</h1>
-                <div className="UserDirectory">
                 
+                <h1 className="CommunityPageText">User Directory</h1>
+               
+                <div className="UserDirectory">
                 <ul>
                     {/* insert user list into page */}
                     { userList }
                 </ul>
                 <GiveProps show={ this.state.givingProps } done={ this.doneGivingProps } updateFormValue={ this.updateForm } sender={ this.props.user } recipient={ this.state.propsRecipient}/>
-            </div>
+                </div>
             </div>
            
         )
