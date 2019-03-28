@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/user');
-const Props = require('../models/props')
+const Props = require('../models/props');
+const mongoose = require('mongoose');
 
 
 
@@ -59,7 +60,6 @@ router.get('/:id/props', (req, res) => {
         }
     })
 })
-
 
 // POST /users - Create one user
 router.post('/', (req, res) => {

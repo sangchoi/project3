@@ -38,12 +38,11 @@ class ProfileForm extends Component {
             interests: this.state.interests,
             groups: this.state.groups,
             photo: this.state.photo,
-            userId: this.props.user._id
+            user: this.props.user._id
         }).then(res => {
             console.log(res)
             this.props.hideProfileForm()
         })
-
     }
 
     componentDidMount() {

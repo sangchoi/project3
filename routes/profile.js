@@ -17,7 +17,7 @@ router.post('/', (req, res) => {
         console.log('return from Profile.create', err, profile)
         if (!err) {
             // add profile ref and department ref to user
-            User.findByIdAndUpdate(req.body.userID, {
+            User.findByIdAndUpdate(req.body.user, {
                 profile: profile._id,
                 department: req.body.dep
             }, (err, user) => {
