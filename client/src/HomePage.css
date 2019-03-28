@@ -149,4 +149,13 @@
     font-size: 2em;
 }
 
+.MyProps .singleProps {
+    display: grid;
+    grid-auto-flow: row;
+}
+
+.MyProps .singleProps > * {
+    margin: 1em;
+}
+
 
