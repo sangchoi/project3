@@ -72,6 +72,9 @@
   /* border: 1px red solid; */
   
 }
+div.PropsAppBar {
+  max-width: 100vw;
+}
 
 
 /* PropsLogo.jsx ------------------------------------------------------------------------- */
