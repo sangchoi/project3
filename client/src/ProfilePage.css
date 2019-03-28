@@ -4,7 +4,7 @@
     margin: 0;
     display: grid;
     grid-template-columns: .5fr .5fr;
-    grid-template-rows: .3fr .7fr;
+    grid-template-rows: .1fr .9fr;
     grid-template-areas: "profilepagenavdiv profilepagenavdiv"
                          "profilepageuserprofile profilepageprofilelong";
   }
@@ -13,17 +13,25 @@
 
 .ProfilePageNavDiv {
     grid-area: profilepagenavdiv;
-    border: 1px red solid;
+    /* border: 1px red solid; */
+    background-color: black;
+    height: 60px;
 }
+
 
 .ProfilePageUserProfile {
     grid-area: profilepageuserprofile;
-    border: 1px red solid;
+    border: 2px red solid;
+    border-radius: 50px;
+    margin: 10px 20px 30px 20px;
+    
 }
 
 .ProfilePageProfileLong {
     grid-area: profilepageprofilelong;
-    border: 1px red solid;
+    border: 2px red solid;
+    border-radius: 50px;
+    margin: 10px 20px 30px 20px;
 }
 
 /* PropsAppBar.jsx ------------------------------------------------------------------------- */

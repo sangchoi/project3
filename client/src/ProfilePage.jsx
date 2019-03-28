@@ -10,6 +10,7 @@ const Profile = props => {
         <div className="ProfilePageNavDiv">
                 <PropsAppBar />
             </div>
+            {/* <div className="ProfilePageBox"> */}
             <section className="ProfilePageUserProfile">
                 <UserProfile user={ props.user }/>
             </section>
@@ -17,6 +18,7 @@ const Profile = props => {
                 <ProfileLong user={ props.user }/>
             </section>
         </div>
+        // </div>
     )
 }
 

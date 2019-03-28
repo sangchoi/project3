@@ -1,24 +1,19 @@
-import React, { Component } from 'react';
-import axios from 'axios';
+import React from 'react';
 
-class CreateChat extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            
-        }
-    }
-    render() {
-        return(
+
+const CreateChat = (props) => {
+    return (
             <div className='chat-input'>
-                <h4>Chat</h4>
-                <form onSubmit={this.props.handleSubmit}>
-                    <textarea name='chat-body' placeholder='text...' onChange={ this.props.handleTextArea } />
-                    <input type='submit' value='chat' />
+                <h4 className="ChatHeader">CHAT</h4>
+                <form className="ChatForm" onSubmit={this.props.handleSubmit}>
+                    <textarea className="ChatTextBox" name='chat-body' placeholder='text...' onChange={ this.props.handleTextArea } />
+                    
+                    <input className="ChatButton" type='submit' value='SUBMIT' />
                 </form>
             </div>
         )
     }
+
 }
 
 export default CreateChat;
