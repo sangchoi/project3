@@ -3,7 +3,7 @@ import './App.css';
 
 // npm packages
 import axios from 'axios';
-import { BrowserRouter, Route, Link } from 'react-router-dom'
+import { BrowserRouter, Route, Redirect } from 'react-router-dom'
 
 
 // REACT COMPONENTS
@@ -160,6 +160,7 @@ class App extends Component {
       if (!this.state.showProfileForm) {
         content = ( 
             <BrowserRouter>
+                <Route exact path='/' render= { () => <Redirect to="/home" /> }/> 
                 <Route 
                   path="/home"
                   render={ () => <HomePage user={ user } logout={ this.logout }/> }/>
