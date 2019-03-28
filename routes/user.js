@@ -20,6 +20,7 @@ router.get('/', (req, res) => {
 
 // GET /user/:id - Get one user
 router.get('/:id', (req, res) => {
+    console.log('GET /user/:id', req.originalUrl)
     User.findById(req.params.id).populate('profile').populate('department').exec( (err, user) => {
         if(!err) {
             res.status(200).json(user);
@@ -31,6 +32,7 @@ router.get('/:id', (req, res) => {
 
 // GET /user/:id/profile
 router.get('/:id/profile', (req, res) => {
+    console.log('/user/:id/profile', req.originalUrl)
     User.findById(req.params.id).populate('profile').exec( (err, user) => {
         if (!err) {
             res.json({type: 'success', message: 'user profile found', data: user})
@@ -43,10 +45,10 @@ router.get('/:id/profile', (req, res) => {
 
 // GET /user/:id/props -- get one user's props
 router.get('/:id/props', (req, res) => {
-    console.log('GET /users/:id/props', req.originalUrl)
+    console.log('GET /user/:id/props', req.originalUrl)
     Props.find({ $or: [{ from: req.params.id }, { to: req.params.id }] })
-    .populate({ path: 'from', populate: 'profile' })
-    .populate({ path: 'to', populate: 'profile' })
+    .populate({ path: 'from', populate: { path: 'profile' } })
+    .populate({ path: 'to', populate: { path: 'profile' } })
     .exec(( err, props ) => {
         if (!err) {
             console.log('got props back', props)
@@ -61,6 +63,7 @@ router.get('/:id/props', (req, res) => {
 
 // POST /users - Create one user
 router.post('/', (req, res) => {
+    console.log('POST /user', req.originalUrl)
     let user = new User({
         name: req.body.name,
         password: req.body.password,
