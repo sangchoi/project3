@@ -5,7 +5,7 @@
     margin: 0;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: .1fr .1fr .8fr;
+    grid-template-rows: .1fr .1fr auto;
     grid-template-areas: "communitypagenavdiv"
                          "communitypagetext"
                          "userdirectory";
@@ -19,34 +19,32 @@
     grid-area: communitypagenavdiv;
     /* border: 1px red solid; */
     background-color: black;
-    height: 60px;
-   
+    height: 60px; 
+}
+
+.CommunityPageText {
+    font-size: 3em;
+    margin: 20px 0 10px 30px;
+    /* border: 1px red solid; */
+    /* vertical-align: top; */
 }
 
 .UserDirectory {
     grid-area: userdirectory;
     max-width: 100%;
-    margin: 0 0 0 30px;
+    margin: 15px 0 10px 40px;
     /* border: 1px red solid; */
     vertical-align: top;
     
 }
 
-.CommunityPageText {
-    grid-area: communitypagetext;
-    font-size: 3em;
-    margin: 10px 0 10px 20px;
-    /* border: 1px red solid; */
-    vertical-align: top;
-}
 
 /* DirectoryEntry.jsx ------------------------------------------------------------------------- */
 
 .DirectoryEntry {
-    margin: 0 0 10px 0;
+    margin: 0 0 20px 0;
     /* border: solid 1px blue; */
 }
-
 
 .directoryprofilebutton, .directoryentrypicture, .name, .department, .directorypropsbutton {
     vertical-align: middle;
@@ -85,13 +83,4 @@
 }
 
 
-
-
-/*
-.DirectoryEntry button {
-    margin: 1em;
-    border: solid 1px black;
-} */
-
-/* PropsAppBar.jsx ------------------------------------------------------------------------- */
 

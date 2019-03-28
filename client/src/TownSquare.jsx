@@ -2,14 +2,20 @@ import React from 'react';
 import PropsFeed from './PropsFeed';
 import PropsPieChart from './PropsPieChart';
 import PropsAppBar from './PropsAppBar';
+import './TownSquare.css'
 
 const TownSquare = props => {
     return (
         <div className="townsquare">
-        <PropsAppBar logout={ props.logout } />
-        <PropsPieChart />
+            <div className="TownSquareNav">
+            <PropsAppBar logout={ props.logout } />
+            </div>
+            <div className="TownSquarePieChart">
+            <PropsPieChart />
+            </div>
+
             <div className="square">
-                <PropsFeed />
+            <PropsFeed />
             </div>
             <div className="data">
                 <div className="company-data">
