@@ -25,9 +25,9 @@ const signupLimiter = new RateLimit({
 })
 
 // For Dev
-mongoose.connect('mongodb://localhost/' + process.env.PROPS_DB, {useNewUrlParser: true});
+// mongoose.connect('mongodb://localhost/' + process.env.PROPS_DB, {useNewUrlParser: true});
 // For Production
-// mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true});
+mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true});
 
 const db = mongoose.connection;
 db.on('open', () => {
