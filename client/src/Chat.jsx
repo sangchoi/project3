@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import CreateChat from './CreateChat';
+import './Chat.css';
 
 class Chat extends Component {
     constructor(props) {
@@ -13,6 +14,7 @@ class Chat extends Component {
         }
     }
     componentDidMount() {
+        this.getMessages()
         let pollingInterval = setInterval(this.getMessages, 1000)
         this.setState({
             pollingInterval
@@ -27,18 +29,23 @@ class Chat extends Component {
             body: body
         })
     }
+    clearTextArea = () => {
+        let body = this.state.body
+        this.state.onSearchTermChange(body)
+        this.setState({
+            body: ''
+        })
+    }
     handleSubmit = (e) => {
-        console.log(this.props.user._id)
         e.preventDefault()
         let data = {
             senderId: this.props.user._id,
             body: this.state.body
         }
-        console.log("checking user id again:", data.senderId)
         axios.post('/api/chat', data)
         .then(res => {
-            console.log('chat data sent to server', res)
             this.getMessages()
+            this.clearTextArea()
         }).catch(err => {
             console.log("error returned from axios:", err)
         })
@@ -48,8 +55,8 @@ class Chat extends Component {
             .then(res => {
                 this.setState({
                     messages: res.data.data
-                });
-            });
+                })
+            })
     }
     render() {
         let chatFeed = this.state.messages.map(( message, index) => {
@@ -57,12 +64,16 @@ class Chat extends Component {
         })
         console.log(chatFeed)
         return ( 
-            <div>
+            <>
+            <div className='chat-feed'>
                 <ul>
                     {chatFeed}
-                    <CreateChat user={this.props.user} handleSubmit={this.handleSubmit} handleTextArea={this.handleTextArea}  />
                 </ul>
             </div>
+            <div className='chat-input'>
+                    <CreateChat user={this.props.user} handleSubmit={this.handleSubmit} handleTextArea={this.handleTextArea} body={this.state.body} />
+            </div>
+            </>
         )
     }
 }
