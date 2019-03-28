@@ -1,7 +1,7 @@
 {
-  "name": "jwt-auth-boilerplate",
+  "name": "Props",
   "version": "1.0.0",
-  "description": "Functional JWT Authentication Backend",
+  "description": "Workplace communication and engagement tool",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fx-wood/jwt-auth-boilerplate.git"
+    "url": "git+https://github.com/sangchoi/project3"
   },
-  "author": "FX",
+  "author": "Sang, Gavin, FX",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/fx-wood/jwt-auth-boilerplate/issues"
+    "url": "https://github.com/sangchoi/issues"
   },
-  "homepage": "https://github.com/fx-wood/jwt-auth-boilerplate#readme",
+  "homepage": "https://github.com/sangchoi/project3",
   "dependencies": {
     "bcrypt": "^3.0.5",
     "dotenv": "^7.0.0",

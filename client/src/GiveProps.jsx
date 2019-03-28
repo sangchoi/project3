@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import Icon from '@material-ui/core/Icon';
+import Chip from '@material-ui/core/Chip';
+import Avatar from '@material-ui/core/Avatar';
 import axios from 'axios';
 import './GiveProps.css';
 
@@ -44,30 +47,23 @@ class GiveProps extends Component {
         console.log(this.props)
         if (this.props.show) {
             return (
-                <div className="GivePropsModalOverlay">
-                    <div className="GivePropsModal">
-                    <h2>Give Props Form</h2>
-                        <p>
-                            <img src="https://via.placeholder.com/30" alt="extra small user avatar"/>  
-                            <span>From Me </span> 
-                        </p>
-                        <p>
-                            <img src="https://via.placeholder.com/30" alt="extra small user avatar"/>
-                            <span>To : { this.props.recipient.name } </span>
-                            <span>from { this.props.recipient.department } </span>
-                        </p>
+                    <div className="GivePropsForm">
+                        <h2>Give Props Form</h2>
+
+                        <span>From Me </span> 
+                        <Chip icon={ <Icon>arrow_forward</Icon> } label={ this.props.recipient.name } />
+                        <p><img src="https://via.placeholder.com/50" alt="user avatar" className={'GivePropsAvatar'}/></p>
                         <form onSubmit={ this.handleSubmit }>
                             <br/>
-                            <textarea name="body" placeholder="Enter props here" onChange={ this.handleInputChange }></textarea>
+                            <textarea className="GivePropsTextArea" name="body" placeholder="Enter props here" onChange={ this.handleInputChange }></textarea>
                             <br/>
-                            <button>Did a great job</button><button>Went above and beyond</button>
+                            {/* <button>Did a great job</button><button>Went above and beyond</button>
                             <br/>
                             <button>Made life easier</button><button>Helped out</button>
-                            <br/>
-                            <input type="submit" value="Give Props"/>
+                            <br/> */}
+                            <input className="SUBMIT" type="submit" value="Give Props"/>
                         </form>
                     </div>
-                </div>
             )
         } else {
             return null
