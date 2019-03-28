@@ -167,26 +167,26 @@ class App extends Component {
 
                 <Route 
                   path="/profile" exact
-                  render={ () => <ProfilePage user={ user } /> } />
+                  render={ () => <ProfilePage user={ user } logout={ this.logout }/> } />
                 <Route
                   path="/profile/signup" 
                   render={ () => <ProfileForm user={ user } /> } />
                 
                 <Route 
                   path="/community" 
-                  render={ () => <CommunityPage user={ user } /> } />
+                  render={ () => <CommunityPage user={ user } logout={ this.logout }/> } />
 
                 <Route 
                   path="/square" 
-                  component={ TownSquare } /> 
+                  render={ () => <TownSquare logout={ this.logout } /> } /> 
 
                 <Route 
                   path="/setup" 
-                  component={ SetUpPage } />
+                  render={ () => <SetUpPage logout={ this.logout } /> } />
 
                 <Route
                   path="/chat"
-                  render={ () => <Chat user={ user} /> } />
+                  render={ () => <Chat user={ user } logout={ this.logout } /> } />
 
                 
             </BrowserRouter>

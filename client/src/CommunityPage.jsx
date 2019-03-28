@@ -66,7 +66,7 @@ class UserDirectory extends Component {
             
             <div className="CommunityPageDiv">
                 <div className="CommunityPageNavDiv">
-                <PropsAppBar />
+                <PropsAppBar logout={ this.props.logout } />
                 </div>
                 <h1 className="CommunityPageText">UserDirectory.jsx</h1>
                 <div className="UserDirectory">

@@ -10,7 +10,7 @@ const Profile = props => {
         <div className='profile-box'>
 
             <div className="ProfilePageNavDiv">
-                <PropsAppBar />
+                <PropsAppBar logout={ props.logout } />
             </div>
 
             <section className="ProfilePageUserProfile">
