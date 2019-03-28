@@ -1,6 +1,6 @@
 {
-  "short_name": "JWT Boilerplate",
-  "name": "Afunctional JWT token auth backend",
+  "short_name": "Props",
+  "name": "A workplace engagement and communication application",
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
