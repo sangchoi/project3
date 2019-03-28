@@ -47,9 +47,11 @@ class PropsFeed extends Component {
                 {myPropsList}
             </ul>
             
-            <button onClick={ this.previousPageHandler }>Previous Page</button>
+            <div className="PropsFeedButtonDiv">
+            <button className="PropsFeedButton1" onClick={ this.previousPageHandler }>Previous Page</button>
             <span>{'page: ' + pagenum }</span>
-            <button onClick={ this.nextPageHandler }> Next Page </button>
+            <button className="PropsFeedButton2" onClick={ this.nextPageHandler }> Next Page </button>
+            </div>
             </div>
         )    
     }

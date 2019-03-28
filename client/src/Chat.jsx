@@ -59,16 +59,41 @@ class Chat extends Component {
             })
     }
     render() {
+        const userStyle = {
+            backgroundColor: 'rgb(228, 26, 35)',
+            color: 'white',
+            fontSize: '1em',
+            border: '1px solid red',
+            borderRadius: '5%',
+            width: '70vw',
+            height: '1.5em',
+            marginLeft: '2em',
+            paddingLeft: '1em'
+        }
+        const otherStyle = {
+            backgroundColor: 'white',
+            color: 'black',
+            fontSize: '1em',
+            border: '1px solid black',
+            width: '70vw',
+            height: '1.5em',
+            marginLeft: '2em',
+            paddingLeft: '1em'
+        }
+
         let chatFeed = this.state.messages.map(( message, index) => {
-            return <li key={index}>{message.body}</li>
+            let senderId = message.senderId
+            let userId = this.props.user._id
+            if (senderId === userId) {
+                return <p key={index} style={userStyle}>{message.body}</p>
+            } else {
+                return <p key={index} style={otherStyle}>{message.body}</p>
+            }
         })
-        console.log(chatFeed)
         return ( 
             <>
             <div className='chat-feed'>
-                <ul>
                     {chatFeed}
-                </ul>
             </div>
             <div className='chat-input'>
                     <CreateChat user={this.props.user} handleSubmit={this.handleSubmit} handleTextArea={this.handleTextArea} body={this.state.body} />

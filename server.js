@@ -57,7 +57,7 @@ app.get('*', function(req, res) {
     res.sendFile(__dirname + '/client/build/index.html')
 });
 
-app.listen(process.env.EXPRESS_PORT, () => {
-    console.log(`You're listening to the sweet sounds of ${process.env.EXPRESS_PORT} PROPS in the morning...`)
-    console.log(`Oh, and the port is`, process.env.EXPRESS_PORT)
-})
+app.listen(process.env.PORT, () => {
+    console.log(`You're listening to the sweet sounds of ${process.env.PORT} PROPS in the morning...`)
+    console.log(`Oh, and the port is`, process.env.PORT)
+});
