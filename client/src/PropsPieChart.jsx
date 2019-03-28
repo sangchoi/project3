@@ -56,8 +56,8 @@ class PropsPieChart extends Component {
     render() {
         return (
             <>
-                <button onClick={ this.propsSentByDepartment }>See props sent by each department</button>
-                <PieChart width={300} height={ 300 } >
+                <button className="PieChartButton" onClick={ this.propsSentByDepartment }>See props sent by each department</button>
+                <PieChart className="ThePieChart" width={300} height={ 300 } >
                     <Pie data={this.state.data} />
                     <Tooltip />
                 </PieChart>
