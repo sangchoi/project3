@@ -149,6 +149,9 @@
 
 /* MyPropsShort.jsx ------------------------------------------------------------------------- */
 
+.MyProps * {
+    box-sizing: border-box;
+}
 .MyPropsTextBox {
     margin: 10px 10px 40px 30px;
     padding: 5px;
@@ -160,11 +163,40 @@
 
 .MyProps .singleProps {
     display: grid;
-    grid-auto-flow: row;
+    text-align: left;
+    grid-auto-flow: column;
+    border: .5px solid rgb(68, 68, 68);
+    border-radius:30px 30px 30px 30px ;
+    padding: .5em;
+    margin-bottom: 1em; 
+}
+.MyProps .singleProps > * {
+    height: 40px;
 }
 
+.MyProps .singleProps .body {
+    display: flex;
+    align-items: center;
+
+}
+
+.MyProps .singleProps.incoming {
+    justify-content: start;
+}
+.MyProps .singleProps.incoming > * {
+    padding: 0 1em;
+}
+
+.MyProps .singleProps.outgoing {
+    justify-content: end;
+}
+.MyProps .singleProps.outgoing > * {
+    padding: 0 1em;
+}
+
+.MyProps .singleProps 
 .MyProps .singleProps > * {
-    margin: 1em;
+    margin: .5em;
 }
 
 

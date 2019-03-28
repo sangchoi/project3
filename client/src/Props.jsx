@@ -1,8 +1,8 @@
 import React from 'react';
 import Icon from '@material-ui/core/Icon';
+import Chip from '@material-ui/core/Chip';
 
 const Props = ({ singleProps, user }) => {
-    console.log('is user null?', user)
     if (!user) {
         return (
             <div className="singleProps global">
@@ -11,19 +11,28 @@ const Props = ({ singleProps, user }) => {
             </div>
         )
     } else if ( user._id === singleProps.from._id ) {
+        console.log(singleProps.to.profile)
         return (
-            <div className="singleProps incoming">
-                <Icon>call_made</Icon>
-                <span className="body">Body: { singleProps.body }</span>
-                <span>From: { singleProps.from.name }</span>
+            <div className="singleProps outgoing">
+                
+                <span className="body">{ singleProps.body }</span>
+                <div className="recipient">
+                <Chip 
+                    icon={ <Icon className="icon">arrow_forward</Icon> } 
+                    label={ singleProps.to.name } />
+                </div>
             </div>
         )
     } else if ( user._id === singleProps.to._id ) {
         return (
-            <div className="singleProps outgoing">
-                <i>call_received</i>
-                <span className="body">Body: { singleProps.body }</span>
-                <span>To: { singleProps.to.name }</span>
+            <div className="singleProps incoming">
+                <div className="sender">
+                    <Chip 
+                        label={ singleProps.from.name } 
+                        icon={ <Icon className="icon">arrow_back</Icon> } />
+                </div>
+                <span className="body">{ singleProps.body }</span>
+                
             </div>
         )
     }
