@@ -63,7 +63,7 @@ class MyPropsShort extends Component {
                 <Chip label="Sent"      variant={ this.state.filter === 'sent'? null : "outlined" }    onClick={ () => this.setState({filter: 'sent'}) } />
                 <Chip label="Received"  variant={ this.state.filter === 'received'? null : "outlined"} onClick={ () => this.setState({filter: 'received'}) } />
                 <Chip label="All"       variant={ this.state.filter === 'all' ? null : "outlined" }    onClick={ () => this.setState({filter: 'all'}) } />
-                <h2 className="MyPropsText">MY PROPS</h2>
+                <h2 className="MyPropsText">Recent Props</h2>
                 { MyPropsList }
                 </div>
             </div>

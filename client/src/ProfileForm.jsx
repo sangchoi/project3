@@ -69,7 +69,7 @@ class ProfileForm extends Component {
                     <br/>
                     <label className="ProfileFormLabel">Community:
                    
-                    <select className="ProfileFormInput ProfileFormInput2" name="dep" id="dep" onChange={ this.handleInputChange }>
+                    <select className="ProfileFormInput ProfileFormInput2" name="dep" id="dep" onInput={ this.handleInputChange }>
                     <option value="" hidden="hidden">Choose your Community</option>
                         { options }
                     </select>
