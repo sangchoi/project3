@@ -52,17 +52,11 @@ userSchema.methods.authenticated = function(password) {
 
 // hashes passwords before saving to the database
 userSchema.pre('save', function(next) {
-    console.log('presave', this)
-    console.log('presave password', this.password)
     if (this.isNew) {
         (async () => {
-            console.log('plaintext', this.password)
-            let temp = await argon2.hash(this.password);
-            console.log('now it is hashed', temp)
-            this.password = temp
-            console.log('after assigning hash', this.password)
+            this.password = await argon2.hash(this.password);
             next();
-        })(this)
+        })()
     } else {
         next()
     }
